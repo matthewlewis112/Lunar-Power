@@ -1,0 +1,7 @@
+﻿The system shall track users sleep cycle
+
+
+The system shall recognize and parr with external devices through bluetooth or wifi at user request
+
+
+The system shall allow users to interact with external devices

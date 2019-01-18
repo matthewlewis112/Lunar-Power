@@ -1,0 +1,3 @@
+﻿1. As an audiobook consumer, I want an application that can pause my book when I fall asleep, so that I can save my place.
+2. As a rumba customer, I want an application that can make my rumba vacuum only when I’m asleep, so that I might not get distracted when I’m awake
+3. As an environmentalist, I want an application to time my devices to run outside of peak hours, so that I can be more environmentally conscious.
