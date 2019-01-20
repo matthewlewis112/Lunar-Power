@@ -1,2 +1,5 @@
 Functional Requirements
 
+1. The system shall detect Stage 2 NREM (Non-Rapid Eye Movement) sleep.
+2. The system shall pause any audio or video-based media playing on the target device upon detecting Stage 2 NREM sleep.
+3. The system shall provide an activation command to target appliances upon detecting Stage 2 NREM sleep.

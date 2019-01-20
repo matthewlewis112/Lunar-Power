@@ -1,1 +1,5 @@
 User Stories
+
+1. As an audiobook user, I want a smart watch app that pauses my audiobook when I fall asleep so I can continue were I left off in the morning.
+2. As someone who works long hours and gets home late, I want an app that turns on the dishwasher when I fall asleep so I don't forget to clean the dishes.
+3. As an environmentalist, I want to run some of my appliances at night time so I can lower my carbon footprint (and my electrical bill).
