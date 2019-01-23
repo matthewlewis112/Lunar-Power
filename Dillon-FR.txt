@@ -1,0 +1,8 @@
+1. The system shall support integration with audio book playing services.
+
+2. The system shall be capable of launching updates and virus scans on standard Windows machines.
+
+3. The system shall support integration with the basic functions of common smart* household appliances.
+
+
+smart- A smart appliance is one with access to the internet and can be remotely operated through this internet connection.

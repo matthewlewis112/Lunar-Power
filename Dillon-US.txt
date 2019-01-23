@@ -1,0 +1,5 @@
+1. As an avid listener of audio books, I want to have my book shut off when I fall asleep, so that I don't have to find my place all over again in the morning.
+
+2. As a busy tech user, I want my computer system to run checks and updates while I sleep, so that I don't have to waste my time on such things during the day.
+
+3. As an energy conscious homeowner, I want to have my cleaning appliances (washer, dryer, dishwasher, roomba, etc) to activate while it's dark, I want have my appliances running when energy is cheapest and I'm being greenest.
