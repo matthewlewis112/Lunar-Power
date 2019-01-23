@@ -1,0 +1,4 @@
+1. The system shall use Apple Watch data to record the time the user falls asleep.
+2. The system shall send the user a notification each time a command is executed.
+3. The system shall allow users to queue a set of commands that will execute once they fall asleep.
+

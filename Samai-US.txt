@@ -1,0 +1,4 @@
+1. As a user, I want my audiobook to pause when I fall asleep, so that I can continue listening later.
+2. As a user, I want my Roomba vacuum cleaner to run when I’m in bed, so it can clean without me interfering and bumping into it.
+3. As a user, I want my fan to turn off when I fall asleep, so I can conserve energy and save money on my utilities.
+
