@@ -1,2 +1,2 @@
-# NocTurnOn
-CSC 308 Project
+# Lunar Power
+CSC 309 Project
