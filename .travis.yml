@@ -1,2 +1,2 @@
 language: andriod
-script: gradle LunarPower/build
+script: gradle LunarPower/build.gradle
