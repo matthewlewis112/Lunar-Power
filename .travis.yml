@@ -1,4 +1,4 @@
 language: android
 before_install:
-  - chmod +x build.sh
-script: ./build.sh
+  - cd LunarPower
+script: gradle build build.gradle
