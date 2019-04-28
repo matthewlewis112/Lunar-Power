@@ -1,2 +1,2 @@
-cd $TRAVIS_BUILD_DIR/LunarPower/app
+cd $TRAVIS_BUILD_DIR/LunarPower/
 gradle build build.gradle
