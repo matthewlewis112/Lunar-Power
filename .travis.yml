@@ -8,6 +8,7 @@ android:
     - extra
     - sys-img-x86-andriod-28
 before_install:
+  - ./~/Library/Android/sdk/tools/bin --licenses
   - cd LunarPower
   - pwd
   - ls -la
