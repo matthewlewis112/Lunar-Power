@@ -14,20 +14,12 @@ android:
 jdk:
   - oraclejdk8
 before_install:
-  - wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.2.0.1227-linux.zip
-  - unzip sonar-scanner-cli-3.2.0.1227-linux.zip
-  - export PATH=$PATH:$TRAVIS_BUILD_DIR/sonar-scanner-3.2.0.1227-linux/bin
   - cd LunarPower
   - pwd
   - ls -la
   - chmod +x ./gradlew
 addons:
-  sonarcloud: "matthewlewis112-github"
-  token:
-    secure: 4f95ef5b0de441cb5eaaf31521a938e36439b2df
 jobs:
   include:
     - stage: graddle
       script: ./gradlew build
-    - stage: sonar cloud
-      script: sonar-scanner
