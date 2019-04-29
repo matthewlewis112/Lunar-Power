@@ -3,12 +3,10 @@ android:
   components:
     - tools
     - platform-tools
-
     - build-tools-26.0.2
-
     - android-28
-
+    - extra
     - sys-img-x86-andriod-28
 before_install:
   - cd LunarPower
-script: gradle build build.gradle
+script: gradlew build
