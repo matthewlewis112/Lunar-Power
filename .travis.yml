@@ -21,10 +21,4 @@ before_install:
 jobs:
   include:
     - stage: graddle
-      script: ./gradlew build
-    - stage: sonar-cloud
-      script: ./gradlew sonarqube \
-  -Dsonar.projectKey=matthewlewis112_Lunar-Power \
-  -Dsonar.organization=matthewlewis112-github \
-  -Dsonar.host.url=https://sonarcloud.io \
-  -Dsonar.login=4f95ef5b0de441cb5eaaf31521a938e36439b2df
+      script: ./gradlew build && ./gradlew sonarqube -Dsonar.projectKey=matthewlewis112_Lunar-Power -Dsonar.organization=matthewlewis112-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=4f95ef5b0de441cb5eaaf31521a938e36439b2df
