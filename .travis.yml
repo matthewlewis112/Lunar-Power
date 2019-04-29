@@ -20,8 +20,4 @@ before_install:
   - chmod +x ./gradlew
 script:
   ./gradlew build
-  ./gradlew sonarqube \
-  -Dsonar.projectKey=matthewlewis112_Lunar-Power \
-  -Dsonar.organization=matthewlewis112-github \
-  -Dsonar.host.url=https://sonarcloud.io \
-  -Dsonar.login=07092f8ef9348ee0e4cc1f71ea5059d1533dbbe4
+  
