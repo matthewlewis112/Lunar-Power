@@ -11,5 +11,5 @@ before_install:
   - cd LunarPower
   - pwd
   - ls -la
-  - chmod +x /.gradlew
+  - chmod +x ./gradlew
 script: ./gradlew build
