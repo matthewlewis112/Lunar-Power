@@ -7,6 +7,9 @@ android:
     - android-28
     - extra
     - extra-google-m2repository
+    - extra-android-m2repository
+    - extra-android-support
+    - extra-google-google_play_services
     - sys-img-x86-andriod-28
 before_install:
   - cd LunarPower
