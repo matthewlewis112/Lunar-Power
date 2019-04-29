@@ -1,4 +1,14 @@
 language: android
+android:
+  components:
+    - tools
+    - platform-tools
+
+    - build-tools-26.0.2
+
+    - android-28
+
+    - sys-img-x86-andriod-28
 before_install:
   - cd LunarPower
 script: gradle build build.gradle
