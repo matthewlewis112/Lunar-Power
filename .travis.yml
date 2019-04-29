@@ -9,4 +9,7 @@ android:
     - sys-img-x86-andriod-28
 before_install:
   - cd LunarPower
-script: gradlew build
+  - pwd
+  - ls -la
+  - chmod +x /.gradlew
+script: ./gradlew build
