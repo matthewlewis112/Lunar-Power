@@ -11,6 +11,10 @@ android:
     - extra-android-support
     - extra-google-google_play_services
     - sys-img-x86-andriod-28
+addons:
+  sonarcloud: "matthewlewis112-github"
+  token:
+    secure: 4f95ef5b0de441cb5eaaf31521a938e36439b2df
 jdk:
   - oraclejdk8
 before_install:
@@ -18,12 +22,4 @@ before_install:
   - pwd
   - ls -la
   - chmod +x ./gradlew
-addons:
-  sonarcloud: "matthewlewis112-github"
-  token:
-    secure: 4f95ef5b0de441cb5eaaf31521a938e36439b2df
-jobs:
-  include:
-    - stage: graddle
-      script: ./gradlew build
-    
+script: ./gradlew build
