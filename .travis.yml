@@ -26,5 +26,4 @@ jobs:
   include:
     - stage: graddle
       script: ./gradlew build
-    - stage: sonar cloud
-      script: sonar-scanner
+    
