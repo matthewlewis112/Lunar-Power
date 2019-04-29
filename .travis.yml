@@ -22,6 +22,9 @@ addons:
   sonarcloud: "matthewlewis112-github"
   token:
     secure: 4f95ef5b0de441cb5eaaf31521a938e36439b2df
-script:
-  ./gradlew build
-  sonar-scanner
+jobs:
+  include:
+    - stage: graddle
+      script: ./gradlew build
+    - stage: sonar cloud
+      script: sonar-scanner
