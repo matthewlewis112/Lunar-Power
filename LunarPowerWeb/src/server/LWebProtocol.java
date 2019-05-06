@@ -19,10 +19,7 @@ public class LWebProtocol {
 			output = "Enter name: ";
 			state = SENT;
 		} else if (state == SENT) {
-			output = "Processing";
-			state = ANOTHER;
-		} else if (state == ANOTHER) {
-			output = "Recorded";
+			output = "Done";
 			state = DONE;
 		} else if (state == DONE) {
 			output = "Bye.";
