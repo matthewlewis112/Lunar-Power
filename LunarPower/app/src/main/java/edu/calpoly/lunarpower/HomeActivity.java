@@ -20,21 +20,18 @@ public class HomeActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()){
-                    case R.id.nav_home:
-                        openFragment(new HomeFragment());
-                        return true;
-                    case R.id.nav_history:
-                        openFragment(new HistoryFragment());
-                        return true;
-                    case R.id.nav_devices:
-                        openFragment(new DeviceFragment());
-                        return true;
-                    case R.id.nav_settings:
-                        openFragment(new SettingsFragment());
-                        return true;
-                    default:
-                        return false;
+                if (menuItem.getItemId() == R.id.nav_home) {
+                    openFragment(new HomeFragment());
+                    return true;
+                } else if (menuItem.getItemId() == R.id.nav_history) {
+                    openFragment(new HistoryFragment());
+                    return true;
+                } else if (menuItem.getItemId() == R.id.nav_devices) {
+                    openFragment(new DeviceFragment());
+                    return true;
+                } else if (menuItem.getItemId() == R.id.nav_history) {
+                    openFragment(new SettingsFragment());
+                    return true;
                 }
                 return false;
             }
