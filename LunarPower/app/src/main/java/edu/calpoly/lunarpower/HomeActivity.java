@@ -33,6 +33,8 @@ public class HomeActivity extends AppCompatActivity {
                     case R.id.nav_settings:
                         openFragment(new SettingsFragment());
                         return true;
+                    default:
+                        return false;
                 }
                 return false;
             }
