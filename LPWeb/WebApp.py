@@ -1,6 +1,10 @@
 from flask import Flask
+from flask_restful import Resource, Api
 app = Flask(__name__)
+api = Api(app)
 
-@app.route('/')
-def run_test_server():
-    return 'Working boss!'
+class Devices(Resource):
+    def get(self):
+        return {'Device1': 'Roomba'}
+
+api.add_resource(Devices, '/')
