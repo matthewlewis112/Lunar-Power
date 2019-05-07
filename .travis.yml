@@ -24,3 +24,11 @@ matrix:
         include:
           - stage: graddle
             script: ./gradlew build && ./gradlew sonarqube -Dsonar.projectKey=matthewlewis112_Lunar-Power -Dsonar.organization=matthewlewis112-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=4f95ef5b0de441cb5eaaf31521a938e36439b2df
+    - language: python
+      python:
+        - "3.7"
+
+      install:
+        - pip install flask
+        - pip install flask-restful
+        
