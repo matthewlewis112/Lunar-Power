@@ -27,6 +27,6 @@ matrix:
       python: "3.5"
 
       before_install:
-        - cd ../LPWeb
+        - cd /home/travis/build/matthewlewis112/Lunar-Power/LPWeb
         - pip install flask
         - pip install flask-restful
