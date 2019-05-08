@@ -1,0 +1,10 @@
+-r prod.txt
+
+Flask-DebugToolbar==0.10.1
+
+pylint==1.8.1
+
+coverage==4.4.2
+
+Spinx==1.6.5
+spinx-autobuild==0.7.1
