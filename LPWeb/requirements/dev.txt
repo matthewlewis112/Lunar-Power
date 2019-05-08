@@ -6,5 +6,5 @@ pylint==1.8.1
 
 coverage==4.4.2
 
-Spinx==1.6.5
-spinx-autobuild==0.7.1
+Sphinx==1.6.5
+sphinx-autobuild==0.7.1
