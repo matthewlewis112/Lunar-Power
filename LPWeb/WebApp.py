@@ -8,3 +8,6 @@ class Devices(Resource):
         return {'Device1': 'Roomba'}
 
 api.add_resource(Devices, '/')
+
+if __name__ == '__main__':
+    app.run()
