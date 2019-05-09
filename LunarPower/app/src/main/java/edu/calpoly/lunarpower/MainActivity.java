@@ -12,21 +12,15 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText username;
     private EditText password;
-    private TextView attemptsInfo;
-    private Button login;
-    private int counter = 5;        //users are given 5 attempts before lock out
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        username = (EditText) findViewById(R.id.username);
-        password = (EditText) findViewById(R.id.password);
-        //attempts = (TextView) findViewById(R.id.attempts);
-        login = findViewById(R.id.login);
-
-        attemptsInfo.setText("");   //display nothing until a failed attempt
+        username = findViewById(R.id.username);
+        password = findViewById(R.id.password);
+        Button login = findViewById(R.id.login);
 
         login.setOnClickListener(new View.OnClickListener() {
 
@@ -42,15 +36,6 @@ public class MainActivity extends AppCompatActivity {
         if((username.equals("Admin")) && (password.equals("1234"))){
             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
             MainActivity.this.startActivity(intent);
-        }
-        else{
-            counter--;
-
-            attemptsInfo.setText("attempts remaining: " + counter);
-
-            if(counter == 0){
-                login.setEnabled(false);
-            }
         }
     }
 }
