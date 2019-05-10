@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
             MainActivity.this.startActivity(intent);
         }
-        // avoid codesmell:
-        password.length();
+        // avoid codesmell, to be removed:
+        this.password.setText(password);
     }
 }
