@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void validate(String username, String password){
-        // TODO authentication
-        if((username.equals("Admin")) && (password.equals("1234"))){
+        // authentication dummy
+        if(username.equals("Admin")){
             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
             MainActivity.this.startActivity(intent);
         }
