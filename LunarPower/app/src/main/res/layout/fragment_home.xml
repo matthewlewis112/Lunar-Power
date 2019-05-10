@@ -9,23 +9,24 @@
         android:id="@+id/myDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="105dp"
-        android:layout_marginTop="48dp"
-        android:layout_weight="1"
-        android:text="Task Calender"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:text="Task Calendar"
         android:textAlignment="center"
         android:textColor="@color/text"
         android:textSize="23sp" />
 
     <LinearLayout
-        android:background="@color/text"
-        android:gravity="center_horizontal"
+        android:background="@drawable/corners"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
         android:layout_width="300dp"
         android:layout_height="wrap_content">
 
         <CalendarView
+            android:id="@+id/calendar"
             android:layout_width="wrap_content"
-            android:layout_height="320dp">
+            android:layout_height="353dp">
 
         </CalendarView>
     </LinearLayout>
