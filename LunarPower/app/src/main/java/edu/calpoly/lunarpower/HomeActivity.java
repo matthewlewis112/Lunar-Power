@@ -29,7 +29,7 @@ public class HomeActivity extends AppCompatActivity {
                 } else if (menuItem.getItemId() == R.id.nav_devices) {
                     openFragment(new DeviceFragment());
                     return true;
-                } else if (menuItem.getItemId() == R.id.nav_history) {
+                } else if (menuItem.getItemId() == R.id.nav_settings) {
                     openFragment(new SettingsFragment());
                     return true;
                 }
