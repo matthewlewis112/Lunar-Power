@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void validate(String username, String password){
         // authentication dummy
-        if(username.equals("K")){
+        if(username.equals("k")){
             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
             MainActivity.this.startActivity(intent);
         }
