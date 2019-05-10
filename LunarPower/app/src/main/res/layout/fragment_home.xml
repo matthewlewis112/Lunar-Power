@@ -1,32 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:layout_marginTop="?android:attr/actionBarSize"
     android:layout_height="match_parent"
     android:background="@color/background"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/myDate"
+        android:id="@+id/taskCalendar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="105dp"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="48dp"
-        android:layout_weight="1"
-        android:text="Task Calender"
+        android:text="Task Calendar"
         android:textAlignment="center"
         android:textColor="@color/text"
         android:textSize="23sp" />
 
     <LinearLayout
-        android:background="@color/text"
-        android:gravity="center_horizontal"
+        android:background="@drawable/calendar_corners"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
         android:layout_width="300dp"
         android:layout_height="wrap_content">
 
         <CalendarView
+            android:id="@+id/calendar"
             android:layout_width="wrap_content"
-            android:layout_height="320dp">
+            android:layout_height="353dp">
 
         </CalendarView>
     </LinearLayout>
+
+    /*<Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Tasks"
+        android:background="@drawable/btn_corners"
+        android:textColor="@color/text"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:layout_marginTop="35dp"
+        android:layout_gravity="center_horizontal"/>
 </LinearLayout>
+
+    <!--
+        This will start the view below the action bar
+            android:layout_marginTop="?android:attr/actionBarSize"
+    -->
