@@ -5,12 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context="edu.calpoly.lunarpower.HomeActivity">
 
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="285dp"
+        tools:layout_editor_absoluteY="135dp" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigationView"

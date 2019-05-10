@@ -51,15 +51,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:layout_marginBottom="8dp"
+        android:background="@color/text"
         android:text="Login"
         android:textColor="@color/background"
-        android:background="@color/text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="0.031" />
+        app:layout_constraintVertical_bias="0.122" />
 
 </android.support.constraint.ConstraintLayout>
 
