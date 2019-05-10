@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,10 +31,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void validate(String username, String password){
-        // TODO authentication
-        if((username.equals("k")) && (password.equals("1"))){
+        // authentication dummy
+        if(username.equals("K")){
             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
             MainActivity.this.startActivity(intent);
         }
+        // avoid codesmell, to be removed:
+        this.password.setText(password);
     }
 }
