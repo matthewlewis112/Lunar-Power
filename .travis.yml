@@ -32,6 +32,7 @@ matrix:
       install:
         - pip install -r requirements/dev.txt
         - pip install flask-restful
+        - pip install flask-httpauth
 
       script:
         - python WebApp.py
