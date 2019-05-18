@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, make_response
 from flask import abort, request
 from flask_restful import Resource, Api
+from flask_httpauth import HTTPBasicAuth
 app = Flask(__name__)
 api = Api(app)
 
@@ -12,6 +13,18 @@ api = Api(app)
 
 #https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask
 #That's a blog I'm using for reference on how to make an API
+
+auth = HTTPBasicAuth()
+
+@auth.get_password
+def get_password(username):
+    if username == 'root':
+        return 'toor'
+    return None
+
+@auth.error_handler
+def unathorized():
+    return make_response(jsonify({'error': 'Unauthorized access'}), 401)
 
 @app.errorhandler(404)
 def notFound(error):
@@ -83,6 +96,7 @@ def addDevice():
 
 # api.add_resource(Devices, '/')
 # api.add_resource()
+
 
 if __name__ == '__main__':
     app.run()
