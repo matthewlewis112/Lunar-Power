@@ -63,11 +63,13 @@ devices = [
 
 #curl -i <localhost_url>
 @app.route('/', methods=['GET'])
+@auth.login_required
 def getDevices():
     return jsonify({'devices' : devices})
 
 #Returns a specific device based on its id
 @app.route('/<int:deviceId>', methods=['GET'])
+@auth.login_required
 def getDevice(deviceId):
     targetDevice = []
     for device in devices:
@@ -80,6 +82,7 @@ def getDevice(deviceId):
 #curl -i -H "Content-Type: application/json" -X POST -d "{"""title""":"""Read a book"""}" <localhost_url>
 ##The above command isn't working right now, I'll figure it out later
 @app.route('/', methods=['POST'])
+@auth.login_required
 def addDevice():
     #this will change when we get a new database
     #right now it is based off of my fake database
