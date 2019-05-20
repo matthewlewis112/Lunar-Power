@@ -2,6 +2,8 @@ from flask import Flask, jsonify, make_response
 from flask import abort, request
 from flask_restful import Resource, Api
 from flask_httpauth import HTTPBasicAuth
+from werkzeug.security import generate_password_hash, check_password_hash
+
 app = Flask(__name__)
 api = Api(app)
 
@@ -16,10 +18,15 @@ api = Api(app)
 
 auth = HTTPBasicAuth()
 
-@auth.get_password
+users = {
+    "admin": generate_password_hash("LunarPower5"),
+    "user1": generate_password_hash("password")
+}
+
+@auth.get_password 
 def get_password(username):
-    if username == 'root':
-        return 'toor'
+    if username in users:
+        return users.get(username)
     return None
 
 @auth.error_handler
