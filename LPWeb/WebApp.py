@@ -1,6 +1,9 @@
 from flask import Flask, jsonify, make_response
 from flask import abort, request
 from flask_restful import Resource, Api
+from flask_httpauth import HTTPBasicAuth
+from werkzeug.security import generate_password_hash, check_password_hash
+
 app = Flask(__name__)
 api = Api(app)
 
@@ -11,8 +14,27 @@ api = Api(app)
 #https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask
 #That's a blog I'm using for reference on how to make an API
 
+<<<<<<< HEAD
 #https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iv-database
 #That's a blog for implementing the SQL database
+=======
+auth = HTTPBasicAuth()
+
+users = {
+    "admin": generate_password_hash("LunarPower5"),
+    "user1": generate_password_hash("password")
+}
+
+@auth.get_password 
+def get_password(username):
+    if username in users:
+        return users.get(username)
+    return None
+
+@auth.error_handler
+def unathorized():
+    return make_response(jsonify({'error': 'Unauthorized access'}), 401)
+>>>>>>> bda7215fc7c533543641a12228e4dc4a14c67c2a
 
 @app.errorhandler(404)
 def notFound(error):
@@ -51,11 +73,13 @@ devices = [
 
 #curl -i <localhost_url>
 @app.route('/', methods=['GET'])
+@auth.login_required
 def getDevices():
     return jsonify({'devices' : devices})
 
 #Returns a specific device based on its id
 @app.route('/<int:deviceId>', methods=['GET'])
+@auth.login_required
 def getDevice(deviceId):
     targetDevice = []
     for device in devices:
@@ -68,6 +92,7 @@ def getDevice(deviceId):
 #curl -i -H "Content-Type: application/json" -X POST -d "{"""title""":"""Read a book"""}" <localhost_url>
 ##The above command isn't working right now, I'll figure it out later
 @app.route('/', methods=['POST'])
+@auth.login_required
 def addDevice():
     #this will change when we get a new database
     #right now it is based off of my fake database
@@ -84,6 +109,7 @@ def addDevice():
 
 # api.add_resource(Devices, '/')
 # api.add_resource()
+
 
 if __name__ == '__main__':
     app.run()

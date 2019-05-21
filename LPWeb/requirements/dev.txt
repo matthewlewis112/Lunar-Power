@@ -1,6 +1,6 @@
 -r prod.txt
 
-Flask-DebugToolbar==0.10.1
+Flask-DebugToolbar==0.12.3
 
 pylint==1.8.1
 

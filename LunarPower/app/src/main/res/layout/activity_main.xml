@@ -8,6 +8,23 @@
     android:background="@color/background"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/devices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Lunar Power"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toTopOf="@+id/username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/username"
         android:layout_width="240dp"
@@ -51,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:layout_marginBottom="8dp"
-        android:background="@color/text"
+        android:background="@drawable/btn_corners"
         android:text="Login"
         android:textColor="@color/background"
         app:layout_constraintBottom_toBottomOf="parent"
