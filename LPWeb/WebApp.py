@@ -4,14 +4,15 @@ from flask_restful import Resource, Api
 app = Flask(__name__)
 api = Api(app)
 
-#Set up fake devices
-#return json formatted list of devices
-#That user has already theoretically added to service
-
-#How to run:::: python WebApp.py
+#TODO:
+#maybe add usernames?? I know how to do that
+#Require authorization
 
 #https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask
 #That's a blog I'm using for reference on how to make an API
+
+#https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iv-database
+#That's a blog for implementing the SQL database
 
 @app.errorhandler(404)
 def notFound(error):
