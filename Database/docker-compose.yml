@@ -1,8 +1,0 @@
-version: "3"
-services:
-  mysql-server:
-      image: mysql:5.7
-      ports: 
-        - "3300:3300"
-      environment:
-          MYSQL_ROOT_PASSWORD: password
