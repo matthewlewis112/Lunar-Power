@@ -3,16 +3,12 @@ package edu.calpoly.lunarpower;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,28 +34,24 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void validate(final String username,final String password){
-        // Instantiate the RequestQueue.
-        RequestQueue queue = Volley.newRequestQueue(this);
-        String url ="http://www.google.com";
-
-// Request a string response from the provided URL.
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        // "true".equals(response)
-                        if(username.equals("k")){
-                            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-                            MainActivity.this.startActivity(intent);
-                        }
-                    }
-                }, new Response.ErrorListener() {
+    private void validate(final String username, final String password) {
+        NetworkService.createAndValidateInstance(this, username, password, new NetworkService.Callback<Object>() {
             @Override
-            public void onErrorResponse(VolleyError error) {
-                //username.setText("That didn't work!" + error.getMessage());
+            public Class<Object> getEntityType() {
+                return Object.class;
+            }
+
+            @Override
+            public void onSucceed(Object response) {
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                MainActivity.this.startActivity(intent);
+            }
+
+            @Override
+            public void onFailure(VolleyError error) {
+                Log.d("login", "Fail!");
+                // TODO error message for user
             }
         });
-        queue.add(stringRequest);
     }
 }
