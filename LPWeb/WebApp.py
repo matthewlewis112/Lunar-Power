@@ -18,16 +18,16 @@ api = Api(app)
 #That's a blog for implementing the SQL database
 auth = HTTPBasicAuth()
 
-# # users = {
-# #     "admin": generate_password_hash("LunarPower5"),
-# #     "user1": generate_password_hash("password")
-# # }
+users = {
+    "admin": "LunarPower5",
+    "user1": "Password"
+}
 
-# # @auth.verify_password 
-# # def verify_password(username, password):
-# #     if username in users:
-# #         return check_password_hash(users.get(username), password)
-# #     return None
+@auth.verify_password 
+def verify_password(username, password):
+    if username in users:
+        return users[username] == password
+    return False
 
 # @auth.error_handler
 # def unathorized():
@@ -61,22 +61,18 @@ devices = [
         'done': False
     }
 ]
-# class Devices(Resource):
-#     def get(self):
-#         return {'devices': devices} 
-
-# class Device(Resource):
-#     def get(self, device_id):
+class Devices(Resource):
+    def get(self):
+        return {'devices': devices} 
 
 #curl -i <localhost_url>
 @app.route('/', methods=['GET'])
-# @auth.login_required
+@auth.login_required
 def getDevices():
     return jsonify({'devices' : devices})
 
 #Returns a specific device based on its id
 @app.route('/<int:deviceId>', methods=['GET'])
-# @auth.login_required
 def getDevice(deviceId):
     targetDevice = []
     for device in devices:
@@ -89,7 +85,6 @@ def getDevice(deviceId):
 #curl -i -H "Content-Type: application/json" -X POST -d "{""title"":""Read a book""}" http://127.0.0.1:5000/
 ##The above command now works
 @app.route('/', methods=['POST'])
-# @auth.login_required
 def addDevice():
     #this will change when we get a new database
     #right now it is based off of my fake database
@@ -104,8 +99,7 @@ def addDevice():
     return jsonify({'devices': addedDevice}), 201
 
 
-# api.add_resource(Devices, '/')
-# api.add_resource()
+api.add_resource(Devices, '/')
 
 
 if __name__ == '__main__':
