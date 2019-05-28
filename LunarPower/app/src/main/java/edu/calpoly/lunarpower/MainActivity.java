@@ -8,16 +8,45 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.mobile.auth.core.IdentityManager;
+import com.amazonaws.mobile.auth.core.IdentityHandler;
+import com.amazonaws.mobile.client.*;
+import com.amazonaws.mobile.config.AWSConfiguration;
 import com.android.volley.VolleyError;
 
 public class MainActivity extends AppCompatActivity {
 
     private EditText username;
     private EditText password;
+    private AWSCredentialsProvider credentialsProvider;
+    private AWSConfiguration configuration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        AWSMobileClient.getInstance().initialize(this, new AWSStartupHandler() {
+            @Override
+            public void onComplete(AWSStartupResult awsStartupResult) {
+                Log.d("MainActivity", "AWS is running!");
+                credentialsProvider = AWSMobileClient.getInstance().getCredentialsProvider();
+                configuration = AWSMobileClient.getInstance().getConfiguration();
+                IdentityManager.getDefaultIdentityManager().getUserID(new IdentityHandler() {
+                    @Override
+                    public void onIdentityId(String identityId) {
+                        Log.d("MainActivity", "Identity ID =" + identityId);
+                        final String cahcedIdentiyId = IdentityManager.getDefaultIdentityManager().getCachedUserID();
+                    }
+
+                    @Override
+                    public void handleError(Exception exception) {
+                        Log.d("MainActivity", "Error in retrieving the identity" + exception);
+                    }
+                });
+            }
+        }).execute();
+
         setContentView(R.layout.activity_main);
 
         username = findViewById(R.id.username);

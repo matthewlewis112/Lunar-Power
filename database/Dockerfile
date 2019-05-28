@@ -2,7 +2,7 @@
 FROM mysql:5.6
 
 # Maintainer
-MAINTAINER Rutu Samai <rsamai@calpoly.edu>
+MAINTAINER Matthew Lewis <mglewis@calpoly.edu>
 
 # Install packages
 # ENV PACKAGE <package name>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">LunarPower</string>
+    <string name="title_activity_autehnticator">AutehnticatorActivity</string>
+    <string name="title_activity_authenticator">AuthenticatorActivity</string>
 </resources>
