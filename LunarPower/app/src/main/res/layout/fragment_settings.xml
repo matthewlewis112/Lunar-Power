@@ -27,14 +27,17 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView2"
+            <Button
+                android:id="@+id/logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="LogOut"
+                android:background="@color/background"
+                android:paddingLeft="40sp"
+                android:paddingBottom="40sp"
+                android:text="Logout"
+                android:textAlignment="viewStart"
                 android:textColor="@color/text"
-                android:textSize="23sp"
-                android:padding="40dp"/>
+                android:textSize="24sp"/>
 
             <TextView
                 android:id="@+id/textView3"
