@@ -25,6 +25,6 @@ public class SettingsFragment extends Fragment {
                 IdentityManager.getDefaultIdentityManager().signOut();
             }
         });
-        return inflater.inflate(R.layout.fragment_settings,container,false);
+        return rootView;
     }
 }
