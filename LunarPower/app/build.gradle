@@ -37,10 +37,8 @@ dependencies {
     implementation 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
 
     // Cognito UserPools for SignIn
-    implementation 'com.android.support:support-v4:24.+'
     implementation('com.amazonaws:aws-android-sdk-auth-userpools:2.7.+@aar') { transitive = true }
 
     // Sign in UI Library
-    implementation 'com.android.support:appcompat-v7:24.+'
     implementation('com.amazonaws:aws-android-sdk-auth-ui:2.7.+@aar') { transitive = true }
 }
