@@ -1,6 +1,0 @@
-Flask==0.12.3
-
-gunicorn==19.7.1
-
-behave==1.2.5
-WebTest==2.0.29
