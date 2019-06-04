@@ -77,13 +77,13 @@ public class HomeActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-    public LinkedList<String> getDevices() {
+    public LinkedList<DevicesDO> getDevices() {
         Log.d("Home Activity", "Devices got?");
-        final LinkedList<String> devices = new LinkedList<>();
+        final LinkedList<DevicesDO> devices = new LinkedList<>();
         Runnable runnable = new Runnable() {
             public void run() {
                 for (int i = 0; i < 20; i++) {
-                    devices.add(dynamoDBMapper.load(DevicesDO.class, "", "Name").getName());
+                    devices.add(dynamoDBMapper.load(DevicesDO.class, "Name"));
                 }
                 Log.d("Home Activity", "Returned devices");
             }

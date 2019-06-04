@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
+import edu.calpoly.lunarpower.model.*;
 
 import static edu.calpoly.lunarpower.HomeActivity.*;
 
@@ -19,13 +20,13 @@ public class DeviceFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         LinearLayout view = (LinearLayout)inflater.inflate(R.layout.fragment_devices, container, false);
         HomeActivity activity = (HomeActivity)getActivity();
-        LinkedList<String> devices = activity.getDevices();
+        LinkedList<DevicesDO> devices = activity.getDevices();
         TextView textVal;
 
-        for (String s : devices) {
+        for (DevicesDO d : devices) {
             textVal = new TextView(getActivity());
-            textVal.setText(s);
-            textVal.setId(s.hashCode());
+            textVal.setText(d.getName());
+            textVal.setId(d.getName().hashCode());
             view.addView(textVal);
         }
 
