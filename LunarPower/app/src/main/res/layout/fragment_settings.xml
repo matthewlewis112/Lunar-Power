@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="?android:attr/actionBarSize"
-    android:background="@color/background"
+    android:background="@drawable/gradient"
     android:orientation="vertical">
 
     <TextView
@@ -31,7 +31,7 @@
                 android:id="@+id/logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/background"
+                android:background="@drawable/gradient"
                 android:paddingLeft="40sp"
                 android:paddingBottom="40sp"
                 android:text="Logout"
