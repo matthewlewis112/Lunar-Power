@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.mobile.client.AWSMobileClient;
@@ -91,5 +93,24 @@ public class HomeActivity extends AppCompatActivity {
 
         new Thread(runnable).start();
         return devices;
+    }
+
+    public void addDevice(View view) {
+        openFragment(new AddDeviceFragment());
+    }
+    public void submitInfo(View view) {
+        DevicesDO device = new DevicesDO();
+        EditText name = (EditText)(findViewById(R.id.deviceNameInput));
+        device.setName(
+            name.getText().toString()
+        );
+        EditText id = (EditText)(findViewById(R.id.deviceIDInput));
+        device.setID(
+                Double.parseDouble(id.getText().toString())
+        );
+
+        device.setUserId("Tester");
+        dynamoDBMapper.save(device);
+        openFragment(new DeviceFragment());
     }
 }
