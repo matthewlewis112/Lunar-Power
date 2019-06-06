@@ -11,12 +11,11 @@ import android.view.ViewGroup;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 
 public class AddDeviceFragment extends Fragment {
-    private DynamoDBMapper dynamoDBMapper;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.dynamoDBMapper = ((HomeActivity)getActivity()).getDynamoDBMapper();
+        DynamoDBMapper dynamoDBMapper = ((HomeActivity)getActivity()).getDynamoDBMapper();
     }
 
     @Nullable
