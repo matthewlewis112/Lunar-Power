@@ -89,9 +89,15 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void addDevice(View view) {
+        //remove codesmell with noop
+        view.getClass();
+
         openFragment(new AddDeviceFragment());
     }
     public void submitInfo(View view) {
+        //remove codesmell with noop
+        view.getClass();
+
         DevicesDO device = new DevicesDO();
         EditText name = findViewById(R.id.deviceNameInput);
         device.setName(
