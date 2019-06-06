@@ -63,6 +63,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case AWSLoginModel.PROCESS_CONFIRM_REGISTRATION:
                 whatProcess = "Registration Confirmation:";
                 break;
+            default:
+                break;
         }
         Toast.makeText(LoginActivity.this, whatProcess + exception.getMessage(), Toast.LENGTH_LONG).show();
     }
