@@ -44,7 +44,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onSignInSuccess() {
-        LoginActivity.this.startActivity(new Intent(LoginActivity.this, HomeFragment.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+        Intent intent = new Intent(LoginActivity.this, HomeActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("frag","HomeFragment");
+        LoginActivity.this.startActivity(intent);
     }
 
     @Override

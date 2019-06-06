@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 
+import edu.calpoly.lunarpower.aws.AWSLoginModel;
+
 public class HomeFragment extends Fragment {
     private DynamoDBMapper dynamoDBMapper;
 
@@ -24,5 +26,10 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home,container,false);
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 }

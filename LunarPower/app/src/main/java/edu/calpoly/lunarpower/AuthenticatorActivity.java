@@ -17,7 +17,7 @@ public class AuthenticatorActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_authenticator);
+        setContentView(R.layout.activity_splash);
 
         // Add a call to initialize AWSMobileClient
         AWSMobileClient.getInstance().initialize(this).execute();

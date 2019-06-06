@@ -37,7 +37,11 @@ dependencies {
     implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'
     implementation 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
 
+    // Mobile Client for initializing the SDK
+    implementation('com.amazonaws:aws-android-sdk-mobile-client:2.7.+@aar') { transitive = true; }
+
     // Cognito UserPools for SignIn
+    implementation 'com.android.support:support-v4:28.+'
     implementation('com.amazonaws:aws-android-sdk-auth-userpools:2.7.+@aar') { transitive = true }
 
     // Sign in UI Library
