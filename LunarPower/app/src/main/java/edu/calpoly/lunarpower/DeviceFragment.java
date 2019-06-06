@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.util.LinkedList;
+import java.util.List;
 
 import edu.calpoly.lunarpower.model.DevicesDO;
 
@@ -21,7 +21,7 @@ public class DeviceFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         LinearLayout view = (LinearLayout)inflater.inflate(R.layout.fragment_devices, container, false);
         HomeActivity activity = (HomeActivity)getActivity();
-        LinkedList<DevicesDO> devices = activity.getDevices();
+        List<DevicesDO> devices = activity.getDevices();
         TextView textVal;
 
         for (DevicesDO d : devices) {
