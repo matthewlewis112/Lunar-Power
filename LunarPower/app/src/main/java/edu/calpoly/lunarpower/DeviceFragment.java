@@ -1,6 +1,5 @@
 package edu.calpoly.lunarpower;
 
-import java.util.LinkedList;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -8,10 +7,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.*;
-import edu.calpoly.lunarpower.model.*;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-import static edu.calpoly.lunarpower.HomeActivity.*;
+import java.util.LinkedList;
+
+import edu.calpoly.lunarpower.model.DevicesDO;
 
 public class DeviceFragment extends Fragment {
 
