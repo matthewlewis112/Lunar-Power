@@ -65,10 +65,6 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    public DynamoDBMapper getDynamoDBMapper() {
-        return dynamoDBMapper;
-    }
-
     private void openFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.container, fragment);
@@ -79,7 +75,6 @@ public class HomeActivity extends AppCompatActivity {
     public List<DevicesDO> getDevices() {
         Log.d("Home Activity", "Devices got?");
         final LinkedList<DevicesDO> devices = new LinkedList<>();
-        final DynamoDBMapper dynamoDBMapper = this.dynamoDBMapper;
         Runnable runnable = new Runnable() {
             public void run() {
                 for (int i = 0; i < 20; i++) {
