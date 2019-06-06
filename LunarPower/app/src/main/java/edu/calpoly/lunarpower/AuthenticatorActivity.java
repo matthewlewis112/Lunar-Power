@@ -10,12 +10,11 @@ import com.amazonaws.mobile.auth.core.IdentityManager;
 import com.amazonaws.mobile.auth.core.SignInStateChangeListener;
 import com.amazonaws.mobile.auth.ui.SignInUI;
 import com.amazonaws.mobile.client.AWSMobileClient;
-import com.amazonaws.mobile.client.AWSStartupHandler;
-import com.amazonaws.mobile.client.AWSStartupResult;
 
 public class AuthenticatorActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final String errorTag = "AuthenticatorActivity";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
@@ -24,17 +23,17 @@ public class AuthenticatorActivity extends Activity {
         IdentityManager.getDefaultIdentityManager().addSignInStateChangeListener(new SignInStateChangeListener() {
             @Override
             public void onUserSignedOut() {
-                Log.d("AuthenticatorActivity", "User Signed Out");
+                Log.d(errorTag, "User Signed Out");
                 SignInUI signin = (SignInUI) AWSMobileClient.getInstance().getClient(AuthenticatorActivity.this, SignInUI.class);
                 signin.login(AuthenticatorActivity.this, HomeActivity.class).execute();
             }
 
             @Override
             public void onUserSignedIn() {
-                Log.d("AuthenticatorActivity", "User Signed In");
+                Log.d(errorTag, "User Signed In");
             }
         });
-        Log.d("AuthenticatorActivity", "User Signed Out");
+        Log.d(errorTag, "User Signed Out");
         SignInUI signin = (SignInUI) AWSMobileClient.getInstance().getClient(AuthenticatorActivity.this, SignInUI.class);
         signin.login(AuthenticatorActivity.this, HomeActivity.class).execute();
     }

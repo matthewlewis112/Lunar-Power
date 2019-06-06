@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.amazonaws.auth.AWSCredentialsProvider;
-import com.amazonaws.mobile.auth.core.IdentityManager;
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.config.AWSConfiguration;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
