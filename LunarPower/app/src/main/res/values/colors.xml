@@ -2,8 +2,16 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorLightestAccent">#dd5284</color>
+    <color name="colorLiteAccent">#db3672</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="colorAccentBevel">#c6054c</color>
+    <color name="blueLightestAccent">#c2e2ea</color>
+    <color name="blueLiteAccent">#b2deea</color>
+    <color name="blueAccent">#92d5e8</color>
+    <color name="blueAccentBevel">#6cc9e2</color>
     <color name="text">#EEEEEE</color>
     <color name="textHighlight">#dddddd</color>
     <color name="background">#11111D</color>
+    <!--other option: <color name="blueAccent">#9bdaeb</color>-->
 </resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_pressed="true"
+        android:drawable="@drawable/home_btn_pressed"
+        />
+    <item
+        android:drawable="@drawable/home_btn_default"
+        />
+    <!--The order matters because the system will look for
+    a matching state starting from the top and since
+    there is no state set for the default it will match everythin-->
+</selector>
