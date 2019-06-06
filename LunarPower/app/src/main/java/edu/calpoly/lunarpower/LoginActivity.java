@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onFailure(int process, Exception exception) {
-        Log.d("Login Activity", exception);
+        Log.d("Login Activity", exception.getMessage());
         String whatProcess = "";
         switch (process) {
             case AWSLoginModel.PROCESS_SIGN_IN:

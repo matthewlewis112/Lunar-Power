@@ -1,7 +1,5 @@
 package edu.calpoly.lunarpower;
 
-import android.support.v7.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
