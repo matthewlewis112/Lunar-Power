@@ -92,7 +92,7 @@ public class HomeActivity extends AppCompatActivity {
         return devices;
     }
 
-    public void addDevice() {
+    public void addDevice(View view) {
         openFragment(new AddDeviceFragment());
     }
     public void submitInfo(View view) {
