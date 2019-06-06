@@ -61,6 +61,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case AWSLoginModel.PROCESS_CONFIRM_REGISTRATION:
                 whatProcess = "Registration Confirmation:";
                 break;
+            default:
         }
         Log.e("LunarPower",whatProcess,exception);
         Toast.makeText(LoginActivity.this, whatProcess + exception.getMessage(), Toast.LENGTH_LONG).show();
@@ -78,6 +79,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.loginButton:
                 loginAction();
                 break;
+            default:
         }
     }
 

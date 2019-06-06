@@ -9,43 +9,43 @@ import java.util.Set;
 @DynamoDBTable(tableName = "lunarpower-mobilehub-627565767-Tasks")
 
 public class TasksDO {
-    private String _userId;
-    private Set<Double> _deviceID;
-    private String _name;
-    private Double _taskID;
+    private String userId;
+    private Set<Double> deviceID;
+    private String name;
+    private Double taskID;
 
     @DynamoDBHashKey(attributeName = "userId")
     @DynamoDBAttribute(attributeName = "userId")
     public String getUserId() {
-        return _userId;
+        return userId;
     }
 
-    public void setUserId(final String _userId) {
-        this._userId = _userId;
+    public void setUserId(final String userId) {
+        this.userId = userId;
     }
     @DynamoDBAttribute(attributeName = "DeviceID")
     public Set<Double> getDeviceID() {
-        return _deviceID;
+        return deviceID;
     }
 
-    public void setDeviceID(final Set<Double> _deviceID) {
-        this._deviceID = _deviceID;
+    public void setDeviceID(final Set<Double> deviceID) {
+        this.deviceID = deviceID;
     }
     @DynamoDBAttribute(attributeName = "Name")
     public String getName() {
-        return _name;
+        return name;
     }
 
-    public void setName(final String _name) {
-        this._name = _name;
+    public void setName(final String name) {
+        this.name = name;
     }
     @DynamoDBAttribute(attributeName = "TaskID")
     public Double getTaskID() {
-        return _taskID;
+        return taskID;
     }
 
-    public void setTaskID(final Double _taskID) {
-        this._taskID = _taskID;
+    public void setTaskID(final Double taskID) {
+        this.taskID = taskID;
     }
 
 }

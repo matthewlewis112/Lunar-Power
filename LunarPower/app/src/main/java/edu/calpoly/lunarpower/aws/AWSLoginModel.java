@@ -38,7 +38,7 @@ import org.json.JSONObject;
 @SuppressWarnings("unused")
 public class AWSLoginModel {
     // constants
-    private final String ATTR_EMAIL = "email";
+    private static final String ATTR_EMAIL_KEY = "email";
     private static final String SHARED_PREFERENCE = "SavedValues";
     private static final String PREFERENCE_USER_NAME = "awsUserName";
     private static final String PREFERENCE_USER_EMAIL = "awsUserEmail";
@@ -50,7 +50,8 @@ public class AWSLoginModel {
     private AWSLoginHandler mCallback;
 
     // control variables
-    private String userName, userPassword;
+    private String userName;
+    private String userPassword;
     private Context mContext;
     private CognitoUserPool mCognitoUserPool;
     private CognitoUser mCognitoUser;
@@ -64,7 +65,7 @@ public class AWSLoginModel {
                 public void onSuccess(CognitoUserDetails cognitoUserDetails) {
                     // Save in SharedPreferences
                     SharedPreferences.Editor editor = mContext.getSharedPreferences(SHARED_PREFERENCE, Context.MODE_PRIVATE).edit();
-                    String email = cognitoUserDetails.getAttributes().getAttributes().get(ATTR_EMAIL);
+                    String email = cognitoUserDetails.getAttributes().getAttributes().get(ATTR_EMAIL_KEY);
                     editor.putString(PREFERENCE_USER_EMAIL, email);
                     editor.apply();
                 }
@@ -144,7 +145,7 @@ public class AWSLoginModel {
      */
     public void registerUser(String userName, String userEmail, String userPassword) {
         CognitoUserAttributes userAttributes = new CognitoUserAttributes();
-        userAttributes.addAttribute(ATTR_EMAIL, userEmail);
+        userAttributes.addAttribute(ATTR_EMAIL_KEY, userEmail);
 
         final SignUpHandler signUpHandler = new SignUpHandler() {
             @Override

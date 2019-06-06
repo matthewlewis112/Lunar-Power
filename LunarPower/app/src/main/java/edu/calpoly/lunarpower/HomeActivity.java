@@ -92,16 +92,16 @@ public class HomeActivity extends AppCompatActivity {
         return devices;
     }
 
-    public void addDevice(View view) {
+    public void addDevice() {
         openFragment(new AddDeviceFragment());
     }
     public void submitInfo(View view) {
         DevicesDO device = new DevicesDO();
-        EditText name = (EditText)(findViewById(R.id.deviceNameInput));
+        EditText name = findViewById(R.id.deviceNameInput);
         device.setName(
             name.getText().toString()
         );
-        EditText id = (EditText)(findViewById(R.id.deviceIDInput));
+        EditText id = findViewById(R.id.deviceIDInput);
         device.setID(
                 Double.parseDouble(id.getText().toString())
         );

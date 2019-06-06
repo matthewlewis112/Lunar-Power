@@ -9,34 +9,34 @@ import java.util.List;
 @DynamoDBTable(tableName = "lunarpower-mobilehub-627565767-TaskList")
 
 public class TaskListDO {
-    private String _userId;
-    private List<String> _tasks;
-    private Double _time;
+    private String userId;
+    private List<String> tasks;
+    private Double time;
 
     @DynamoDBHashKey(attributeName = "userId")
     @DynamoDBAttribute(attributeName = "userId")
     public String getUserId() {
-        return _userId;
+        return userId;
     }
 
-    public void setUserId(final String _userId) {
-        this._userId = _userId;
+    public void setUserId(final String userId) {
+        this.userId = userId;
     }
     @DynamoDBAttribute(attributeName = "Tasks")
     public List<String> getTasks() {
-        return _tasks;
+        return tasks;
     }
 
-    public void setTasks(final List<String> _tasks) {
-        this._tasks = _tasks;
+    public void setTasks(final List<String> tasks) {
+        this.tasks = tasks;
     }
     @DynamoDBAttribute(attributeName = "Time")
     public Double getTime() {
-        return _time;
+        return time;
     }
 
-    public void setTime(final Double _time) {
-        this._time = _time;
+    public void setTime(final Double time) {
+        this.time = time;
     }
 
 }
