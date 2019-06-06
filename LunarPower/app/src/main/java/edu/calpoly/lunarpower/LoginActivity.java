@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import edu.calpoly.lunarpower.aws.AWSLoginHandler;
 import edu.calpoly.lunarpower.aws.AWSLoginModel;
+import android.util.Log;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, AWSLoginHandler {
 
@@ -51,7 +52,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onFailure(int process, Exception exception) {
-        exception.printStackTrace();
+        Log.d("Login Activity", exception);
         String whatProcess = "";
         switch (process) {
             case AWSLoginModel.PROCESS_SIGN_IN:
@@ -80,6 +81,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.loginButton:
                 loginAction();
+                break;
+            default:
                 break;
         }
     }

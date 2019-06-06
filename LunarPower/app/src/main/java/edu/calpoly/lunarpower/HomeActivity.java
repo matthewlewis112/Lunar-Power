@@ -63,7 +63,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private void openFragment(Fragment fragment) {
         String frag = getIntent().getStringExtra("frag");
-        if(frag == "HomeFragment") {
+        if(frag.equals("HomeFragment")) {
             getSupportFragmentManager().beginTransaction().replace(R.id.nav_home, new HomeFragment()).commit();
             getSupportActionBar().setTitle("Fragment Activity B");
         }
