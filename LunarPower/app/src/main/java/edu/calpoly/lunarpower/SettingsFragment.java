@@ -17,7 +17,7 @@ public class SettingsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
-        Button logoutBtn = (Button) rootView.findViewById(R.id.logout);
+        Button logoutBtn = rootView.findViewById(R.id.logout);
         logoutBtn.setOnClickListener( new View.OnClickListener() {
             public void onClick(View view) {
                 Log.d("Settings","Logging Out");
