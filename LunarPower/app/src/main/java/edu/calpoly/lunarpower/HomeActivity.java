@@ -18,6 +18,7 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 
 import java.util.LinkedList;
+import java.util.List;
 
 import edu.calpoly.lunarpower.model.DevicesDO;
 
@@ -75,7 +76,7 @@ public class HomeActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-    public LinkedList<DevicesDO> getDevices() {
+    public List<DevicesDO> getDevices() {
         Log.d("Home Activity", "Devices got?");
         final LinkedList<DevicesDO> devices = new LinkedList<>();
         Runnable runnable = new Runnable() {
