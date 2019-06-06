@@ -3,6 +3,7 @@ package edu.calpoly.lunarpower;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -49,7 +50,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onFailure(int process, Exception exception) {
-        exception.printStackTrace();
         String whatProcess = "";
         switch (process) {
             case AWSLoginModel.PROCESS_SIGN_IN:
@@ -62,6 +62,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 whatProcess = "Registration Confirmation:";
                 break;
         }
+        Log.e("LunarPower",whatProcess,exception);
         Toast.makeText(LoginActivity.this, whatProcess + exception.getMessage(), Toast.LENGTH_LONG).show();
     }
 

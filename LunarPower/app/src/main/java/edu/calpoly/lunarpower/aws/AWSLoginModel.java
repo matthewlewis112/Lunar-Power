@@ -2,6 +2,7 @@ package edu.calpoly.lunarpower.aws;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.amazonaws.mobile.auth.core.IdentityManager;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoDevice;
@@ -70,7 +71,7 @@ public class AWSLoginModel {
 
                 @Override
                 public void onFailure(Exception exception) {
-                    exception.printStackTrace();
+                    Log.e("LunarPower","",exception);
                 }
             });
 
@@ -124,8 +125,9 @@ public class AWSLoginModel {
             final String REGION = myJSON.getString("Region");
             mCognitoUserPool = new CognitoUserPool(context, COGNITO_POOL_ID, COGNITO_CLIENT_ID, COGNITO_CLIENT_SECRET, Regions.fromName(REGION));
         } catch (JSONException e) {
-            e.printStackTrace();
+            Log.e("LunarPower","",e);
         }
+
 
         mCallback = callback;
     }
