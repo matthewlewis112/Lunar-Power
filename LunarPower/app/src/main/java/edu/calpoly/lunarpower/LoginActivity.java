@@ -45,11 +45,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onSignInSuccess() {
-        LoginActivity.this.startActivity(new Intent(LoginActivity.this, HomeFragment.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+        Intent intent = new Intent(LoginActivity.this, HomeActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("frag","HomeFragment");
+        LoginActivity.this.startActivity(intent);
     }
 
     @Override
     public void onFailure(int process, Exception exception) {
+        Log.d("Login Activity", exception.getMessage());
         String whatProcess = "";
         switch (process) {
             case AWSLoginModel.PROCESS_SIGN_IN:
@@ -62,8 +65,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 whatProcess = "Registration Confirmation:";
                 break;
             default:
+                break;
         }
-        Log.e("LunarPower",whatProcess,exception);
         Toast.makeText(LoginActivity.this, whatProcess + exception.getMessage(), Toast.LENGTH_LONG).show();
     }
 
@@ -80,6 +83,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 loginAction();
                 break;
             default:
+                break;
         }
     }
 

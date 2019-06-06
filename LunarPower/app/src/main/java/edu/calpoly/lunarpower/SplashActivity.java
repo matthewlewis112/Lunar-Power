@@ -26,7 +26,9 @@ public class SplashActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(StartupAuthResult authResults) {
                         if (authResults.isUserSignedIn()) {
-                            startActivity(new Intent(SplashActivity.this, HomeFragment.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                            Intent intent = new Intent(SplashActivity.this, HomeActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            intent.putExtra("frag","HomeFragment");
+                            startActivity(intent);
                         } else {
                             startActivity(new Intent(SplashActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                         }
