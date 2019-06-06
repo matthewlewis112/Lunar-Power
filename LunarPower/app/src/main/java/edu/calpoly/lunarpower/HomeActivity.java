@@ -79,6 +79,7 @@ public class HomeActivity extends AppCompatActivity {
     public List<DevicesDO> getDevices() {
         Log.d("Home Activity", "Devices got?");
         final LinkedList<DevicesDO> devices = new LinkedList<>();
+        final DynamoDBMapper dynamoDBMapper = this.dynamoDBMapper;
         Runnable runnable = new Runnable() {
             public void run() {
                 for (int i = 0; i < 20; i++) {
