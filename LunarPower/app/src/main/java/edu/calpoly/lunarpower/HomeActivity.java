@@ -74,8 +74,7 @@ public class HomeActivity extends AppCompatActivity {
 
     public List<DevicesDO> getDevices() {
         Log.d("Home Activity", "Devices got?");
-        final LinkedList<DevicesDO> devices = new LinkedList<>();
-        return devices;
+        return new LinkedList<>();
     }
 
     public void addDevice(View view) {
