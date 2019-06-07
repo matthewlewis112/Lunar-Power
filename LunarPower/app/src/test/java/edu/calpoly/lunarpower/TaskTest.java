@@ -2,7 +2,6 @@ package edu.calpoly.lunarpower;
 
 import org.junit.Test;
 
-import edu.calpoly.lunarpower.model.DevicesDO;
 import edu.calpoly.lunarpower.model.TasksDO;
 
 import static org.junit.Assert.assertEquals;
