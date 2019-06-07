@@ -32,15 +32,7 @@ import org.json.JSONObject;
  *
  */
 @SuppressWarnings("unused")
-public class AWSLoginModel {
-    // constants
-    private static final String ATTR_EMAIL = "email";
-    private static final String SHARED_PREFERENCE = "SavedValues";
-    private static final String PREFERENCE_USER_NAME = "awsUserName";
-    private static final String PREFERENCE_USER_EMAIL = "awsUserEmail";
-    public static final int PROCESS_SIGN_IN = 1;
-    public static final int PROCESS_REGISTER = 2;
-    public static final int PROCESS_CONFIRM_REGISTRATION = 3;
+public class AWSLoginModel extends BaseAWSModel{
 
     // interface handler
     private AWSLoginHandler mCallback;
@@ -48,9 +40,6 @@ public class AWSLoginModel {
     // control variables
     private String userName;
     private String userPassword;
-    private Context mContext;
-    private CognitoUserPool mCognitoUserPool;
-    private CognitoUser mCognitoUser;
 
     private final AuthenticationHandler authenticationHandler = new AuthenticationHandler() {
         private String preference = PREFERENCE_USER_NAME;
@@ -114,19 +103,7 @@ public class AWSLoginModel {
      *
      */
     public AWSLoginModel(Context context, AWSLoginHandler callback) {
-        mContext = context;
-        IdentityManager identityManager = IdentityManager.getDefaultIdentityManager();
-        try{
-            JSONObject myJSON = identityManager.getConfiguration().optJsonObject("CognitoUserPool");
-            final String COGNITO_POOL_ID = myJSON.getString("PoolId");
-            final String COGNITO_CLIENT_ID = myJSON.getString("AppClientId");
-            final String COGNITO_CLIENT_SECRET = myJSON.getString("AppClientSecret");
-            final String REGION = myJSON.getString("Region");
-            mCognitoUserPool = new CognitoUserPool(context, COGNITO_POOL_ID, COGNITO_CLIENT_ID, COGNITO_CLIENT_SECRET, Regions.fromName(REGION));
-        } catch (JSONException e) {
-            Log.e("LunarPower","",e);
-        }
-
+        init(context);
         mCallback = callback;
     }
 
