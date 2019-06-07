@@ -15,35 +15,40 @@
         android:text="Add Device"
         android:textAlignment="center"
         android:textColor="@color/text"
-        android:textSize="23sp"/>
+        android:textSize="35sp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
+    <TableLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name: "
-        android:textSize="23sp"
-        android:textColor="@color/text"/>
-    <EditText
-        android:id="@+id/deviceNameInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="name of device"
-        android:textColor="@color/text"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name: "
-        android:textSize="23sp"
-        android:textColor="@color/text"/>
-    <EditText
-        android:id="@+id/deviceIDInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="device id"
-        android:textColor="@color/text"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        android:onClick="submitInfo"/>
+        android:layout_margin="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name of device: "
+            android:textColor="@color/text"/>
+        <EditText
+            android:id="@+id/deviceNameInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="name of device"
+            android:textColor="@color/text"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Device id: "
+            android:textColor="@color/text"/>
+        <EditText
+            android:id="@+id/deviceIDInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="device id"
+            android:textColor="@color/text"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:onClick="submitInfo"/>
+
+    </TableLayout>
 </LinearLayout>

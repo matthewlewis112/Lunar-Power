@@ -15,7 +15,7 @@
         android:text="Settings"
         android:textAlignment="center"
         android:textColor="@color/text"
-        android:textSize="23sp"/>
+        android:textSize="35sp"/>
     <ScrollView
         android:id="@+id/devicesList"
         android:layout_width="match_parent"

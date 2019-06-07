@@ -6,27 +6,24 @@
     android:background="@drawable/gradient"
     android:orientation="vertical">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add Device"
-        android:onClick="addDevice"/>
-
     <TextView
         android:id="@+id/devices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="30dp"
         android:layout_gravity="center_horizontal"
         android:text="Devices"
         android:textAlignment="center"
         android:textColor="@color/text"
-        android:textSize="23sp"/>
+        android:textSize="35sp"/>
 
     <ScrollView
         android:id="@+id/devicesList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="80dp">
 
         <LinearLayout
             android:id="@+id/dev"
@@ -88,6 +85,14 @@
                 android:textSize="23sp"
                 android:padding="40dp"/>
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:onClick="addDevice"
+                android:background="@drawable/login_button"
+                android:text="Add Device" />
+
         </LinearLayout>
     </ScrollView>
+
 </LinearLayout>

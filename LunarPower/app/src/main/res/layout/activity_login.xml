@@ -18,7 +18,7 @@
         android:text="Login"
         android:textAlignment="center"
         android:textColor="@color/text"
-        android:textSize="23sp" />
+        android:textSize="35sp" />
 
     <TableLayout
         android:layout_width="match_parent"

@@ -16,7 +16,7 @@
         android:text="Friday, June 7"
         android:textAlignment="center"
         android:textColor="@color/text"
-        android:textSize="23sp"
+        android:textSize="30sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
