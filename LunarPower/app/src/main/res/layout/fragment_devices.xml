@@ -31,58 +31,70 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView2"
+            <Button
+                android:id="@+id/livingRoomLights"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/settings_button"
+                android:textAlignment="viewStart"
                 android:text="LivingRoom Lights"
                 android:textColor="@color/text"
-                android:textSize="23sp"
+                android:textSize="20sp"
                 android:padding="30dp"/>
 
-            <TextView
-                android:id="@+id/textView3"
+            <Button
+                android:id="@+id/mattewscoffeemaker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/settings_button"
+                android:textAlignment="viewStart"
                 android:text="Mattew's Coffee Maker"
                 android:textColor="@color/text"
-                android:textSize="23sp"
+                android:textSize="20sp"
                 android:padding="30dp"/>
 
-            <TextView
-                android:id="@+id/textView4"
+            <Button
+                android:id="@+id/bedroomTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/settings_button"
+                android:textAlignment="viewStart"
                 android:text="Bedroom TV"
                 android:textColor="@color/text"
-                android:textSize="23sp"
+                android:textSize="20sp"
                 android:padding="30dp"/>
 
-            <TextView
-                android:id="@+id/textView5"
+            <Button
+                android:id="@+id/washer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/settings_button"
+                android:textAlignment="viewStart"
                 android:text="Washer"
                 android:textColor="@color/text"
-                android:textSize="23sp"
+                android:textSize="20sp"
                 android:padding="30dp"/>
 
-            <TextView
-                android:id="@+id/textView6"
+            <Button
+                android:id="@+id/dryer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/settings_button"
+                android:textAlignment="viewStart"
                 android:text="Dryer"
                 android:textColor="@color/text"
-                android:textSize="23sp"
+                android:textSize="20sp"
                 android:padding="30dp"/>
 
-            <TextView
-                android:id="@+id/textView7"
+            <Button
+                android:id="@+id/bedroomlights"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/settings_button"
+                android:textAlignment="viewStart"
                 android:text="Bedroom Lights"
                 android:textColor="@color/text"
-                android:textSize="23sp"
+                android:textSize="20sp"
                 android:padding="30dp"/>
 
             <Button

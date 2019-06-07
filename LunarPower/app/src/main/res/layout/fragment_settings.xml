@@ -39,52 +39,62 @@
                 android:text="Logout"
                 android:textAlignment="viewStart"
                 android:textColor="@color/text"
-                android:textSize="23sp"/>
+                android:textSize="20sp"/>
 
-            <TextView
-                android:id="@+id/textView3"
+            <Button
+                android:id="@+id/permissions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Dark Mode"
-                android:textColor="@color/text"
-                android:textSize="23sp"
-                android:padding="30dp"/>
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Notifications"
-                android:textColor="@color/text"
-                android:textSize="23sp"
-                android:padding="30dp"/>
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Account"
-                android:textColor="@color/text"
-                android:textSize="23sp"
-                android:padding="30dp"/>
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:background="@drawable/settings_button"
+                android:textAlignment="viewStart"
                 android:text="Permissions"
                 android:textColor="@color/text"
-                android:textSize="23sp"
+                android:textSize="20sp"
                 android:padding="30dp"/>
 
-            <TextView
-                android:id="@+id/textView7"
+            <Button
+                android:id="@+id/account"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/settings_button"
+                android:textAlignment="viewStart"
+                android:text="Account"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                android:padding="30dp"/>
+
+            <Button
+                android:id="@+id/notifications"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/settings_button"
+                android:textAlignment="viewStart"
+                android:text="Notifications"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                android:padding="30dp"/>
+
+            <Button
+                android:id="@+id/darkMode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/settings_button"
+                android:textAlignment="viewStart"
+                android:text="Dark Mode"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                android:padding="30dp"/>
+
+            <Button
+                android:id="@+id/languages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/settings_button"
+                android:textAlignment="viewStart"
                 android:text="Languages"
                 android:textColor="@color/text"
-                android:textSize="23sp"
-                android:padding="40dp"/>
+                android:textSize="20sp"
+                android:padding="30dp"/>
 
         </LinearLayout>
     </ScrollView>
