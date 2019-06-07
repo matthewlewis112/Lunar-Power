@@ -24,115 +24,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="25dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_span="3"
-            android:text="Register Section"
-            android:textColor="@color/text"/>
-
-        <TableRow>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Username:"
-                android:textColor="@color/text"/>
-
-            <EditText
-                android:id="@+id/registerUsername"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="text"
-                android:lines="1"
-                android:textColor="@color/text"
-                android:textColorHint="@color/text"
-                android:backgroundTint="@color/text"/>
-
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="E-mail:"
-                android:textColor="@color/text"/>
-
-            <EditText
-                android:id="@+id/registerEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textWebEmailAddress"
-                android:lines="1"
-                android:textColor="@color/text"
-                android:textColorHint="@color/text"
-                android:backgroundTint="@color/text"/>
-
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Password:"
-                android:textColor="@color/text"/>
-
-            <EditText
-                android:id="@+id/registerPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:lines="1"
-                android:textColor="@color/text"
-                android:textColorHint="@color/text"
-                android:backgroundTint="@color/text"/>
-
-        </TableRow>
-
-        <Button
-            android:id="@+id/registerButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/register_button"
-            android:text="Register" />
-
-        <TableRow>
-
-            <Button
-                android:id="@+id/confirmButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/confirm_button"
-                android:text="confirm" />
-
-            <EditText
-                android:id="@+id/confirmationCode"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/text"
-                android:textColorHint="@color/text"
-                android:backgroundTint="@color/text"/>
-
-        </TableRow>
-
-    </TableLayout>
-
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="25dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_span="3"
-            android:text="Login Section"
-            android:textColor="@color/text"/>
-
-
         <TableRow>
 
             <TextView
@@ -150,7 +41,8 @@
                 android:lines="1"
                 android:textColor="@color/text"
                 android:textColorHint="@color/text"
-                android:backgroundTint="@color/text"/>
+                android:backgroundTint="@color/text"
+                />
 
         </TableRow>
 
@@ -181,9 +73,41 @@
             android:background="@drawable/login_button"
             android:text="Login" />
 
+        <Button
+            android:id="@+id/signUpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/confirm_button"
+            android:text="sign Up" />
+
     </TableLayout>
 
 </LinearLayout>
+
+    <!--
+    OPTION TABLE ROWS:
+
+    <TableRow>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username/E-mail:"
+        android:textColor="@color/text"/>
+
+    <EditText
+        android:id="@+id/loginUserOrEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:lines="1"
+        android:textColor="@color/text"
+        android:textColorHint="@color/text"
+        android:backgroundTint="@color/text"
+        />
+
+    </TableRow>-->
 
     <!--
 <?xml version="1.0" encoding="utf-8"?>

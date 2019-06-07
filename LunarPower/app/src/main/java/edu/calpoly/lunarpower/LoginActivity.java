@@ -23,24 +23,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         // instantiating AWSLoginModel(context, callback)
         awsLoginModel = new AWSLoginModel(this, this);
 
-        findViewById(R.id.registerButton).setOnClickListener(this);
         findViewById(R.id.loginButton).setOnClickListener(this);
-        findViewById(R.id.confirmButton).setOnClickListener(this);
+        findViewById(R.id.signUpButton).setOnClickListener(this);
 
-    }
-
-    @Override
-    public void onRegisterSuccess(boolean mustConfirmToComplete) {
-        if (mustConfirmToComplete) {
-            Toast.makeText(LoginActivity.this, "Almost done! Confirm code to complete registration", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(LoginActivity.this, "Registered! Login Now!", Toast.LENGTH_LONG).show();
-        }
-    }
-
-    @Override
-    public void onRegisterConfirmed() {
-        Toast.makeText(LoginActivity.this, "Registered! Login Now!", Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -58,12 +43,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case AWSLoginModel.PROCESS_SIGN_IN:
                 whatProcess = "Sign In:";
                 break;
-            case AWSLoginModel.PROCESS_REGISTER:
-                whatProcess = "Registration:";
-                break;
-            case AWSLoginModel.PROCESS_CONFIRM_REGISTRATION:
-                whatProcess = "Registration Confirmation:";
-                break;
             default:
                 break;
         }
@@ -73,34 +52,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.registerButton:
-                registerAction();
-                break;
-            case R.id.confirmButton:
-                confirmAction();
-                break;
             case R.id.loginButton:
                 loginAction();
+                break;
+            case R.id.signUpButton:
+                signUpAction();
                 break;
             default:
                 break;
         }
-    }
-
-    private void registerAction() {
-        EditText userName = findViewById(R.id.registerUsername);
-        EditText email = findViewById(R.id.registerEmail);
-        EditText password = findViewById(R.id.registerPassword);
-
-        // do register and handles on interface
-        awsLoginModel.registerUser(userName.getText().toString(), email.getText().toString(), password.getText().toString());
-    }
-
-    private void confirmAction() {
-        EditText confirmationCode = findViewById(R.id.confirmationCode);
-
-        // do confirmation and handles on interface
-        awsLoginModel.confirmRegistration(confirmationCode.getText().toString());
     }
 
     private void loginAction() {
@@ -109,5 +69,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         // do sign in and handles on interface
         awsLoginModel.signInUser(userOrEmail.getText().toString(), password.getText().toString());
+    }
+
+    private void signUpAction() {
+        // go to sign up
+        startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
     }
 }

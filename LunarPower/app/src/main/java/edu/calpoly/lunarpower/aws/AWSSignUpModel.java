@@ -28,7 +28,6 @@ import org.json.JSONObject;
 /**
  * This represents a model for login operations on AWS Mobile Hub. It manages login operations
  * such as:
- * - Sign In
  * - Sign Up
  * - Confirm Sign Up
  * - Get User Name (current signed in)
@@ -36,7 +35,7 @@ import org.json.JSONObject;
  *
  */
 @SuppressWarnings("unused")
-public class AWSLoginModel {
+public class AWSSignUpModel {
     // constants
     private static final String ATTR_EMAIL = "email";
     private static final String SHARED_PREFERENCE = "SavedValues";
@@ -47,7 +46,7 @@ public class AWSLoginModel {
     public static final int PROCESS_CONFIRM_REGISTRATION = 3;
 
     // interface handler
-    private AWSLoginHandler mCallback;
+    private AWSSignUpHandler mCallback;
 
     // control variables
     private String userName;
@@ -80,7 +79,6 @@ public class AWSLoginModel {
             SharedPreferences.Editor editor = mContext.getSharedPreferences(SHARED_PREFERENCE, Context.MODE_PRIVATE).edit();
             editor.putString(PREFERENCE_USER_NAME, userName);
             editor.apply();
-            mCallback.onSignInSuccess();
         }
 
         @Override
@@ -109,13 +107,13 @@ public class AWSLoginModel {
 
 
     /**
-     * Constructs the model for login functions in AWS Mobile Hub.
+     * Constructs the model for sign up functions in AWS Mobile Hub.
      *
      * @param context         REQUIRED: Android application context.
      * @param callback        REQUIRED: Callback handler for login operations.
      *
      */
-    public AWSLoginModel(Context context, AWSLoginHandler callback) {
+    public AWSSignUpModel(Context context, AWSSignUpHandler callback) {
         mContext = context;
         IdentityManager identityManager = IdentityManager.getDefaultIdentityManager();
         try{
@@ -133,20 +131,56 @@ public class AWSLoginModel {
     }
 
     /**
-     * Sign in process. If succeeded, this will save the user name and e-mail in SharedPreference of
-     * this context.
+     * Registers new user to the AWS Cognito User Pool.
      *
-     * This will trigger {@link AWSLoginHandler} interface defined when the constructor was called.
+     * This will trigger {@link AWSSignUpHandler} interface defined when the constructor was called.
      *
-     * @param userNameOrEmail        REQUIRED: Username or e-mail.
-     * @param userPassword           REQUIRED: Password.
+     * @param userName         REQUIRED: Username to be registered. Must be unique in the User Pool.
+     * @param userEmail        REQUIRED: E-mail to be registered. Must be unique in the User Pool.
+     * @param userPassword     REQUIRED: Password of this new account.
+     *
      */
-    public void signInUser(String userNameOrEmail, String userPassword) {
-        this.userName = userNameOrEmail;
-        this.userPassword = userPassword;
+    public void registerUser(String userName, String userEmail, String userPassword) {
+        CognitoUserAttributes userAttributes = new CognitoUserAttributes();
+        userAttributes.addAttribute(ATTR_EMAIL, userEmail);
 
-        mCognitoUser = mCognitoUserPool.getUser(userName);
-        mCognitoUser.getSessionInBackground(authenticationHandler);
+        final SignUpHandler signUpHandler = new SignUpHandler() {
+            @Override
+            public void onSuccess(CognitoUser user, boolean signUpConfirmationState, CognitoUserCodeDeliveryDetails cognitoUserCodeDeliveryDetails) {
+                mCognitoUser = user;
+                mCallback.onRegisterSuccess(!signUpConfirmationState);
+            }
+
+            @Override
+            public void onFailure(Exception exception) {
+                mCallback.onFailure(PROCESS_REGISTER, exception);
+            }
+        };
+
+        mCognitoUserPool.signUpInBackground(userName, userPassword, userAttributes, null, signUpHandler);
+    }
+
+    /**
+     * Confirms registration of the new user in AWS Cognito User Pool.
+     *
+     * This will trigger {@link AWSSignUpHandler} interface defined when the constructor was called.
+     *
+     * @param confirmationCode      REQUIRED: Code sent from AWS to the user.
+     */
+    public void confirmRegistration(String confirmationCode) {
+        final GenericHandler confirmationHandler = new GenericHandler() {
+            @Override
+            public void onSuccess() {
+                mCallback.onRegisterConfirmed();
+            }
+
+            @Override
+            public void onFailure(Exception exception) {
+                mCallback.onFailure(PROCESS_CONFIRM_REGISTRATION, exception);
+            }
+        };
+
+        mCognitoUser.confirmSignUpInBackground(confirmationCode, false, confirmationHandler);
     }
 
     /**
