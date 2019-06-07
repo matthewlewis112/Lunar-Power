@@ -13,8 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="48dp"
-        android:text="Login"
+        android:layout_marginTop="55dp"
+        android:text="Sign Up"
         android:textAlignment="center"
         android:textColor="@color/text"
         android:textSize="23sp" />
@@ -27,13 +27,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_span="3"
-            android:text="Register Section"
-            android:textColor="@color/text"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="Username:"
             android:textColor="@color/text" />
 
@@ -41,6 +34,7 @@
             android:id="@+id/registerUsername"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
+            android:layout_marginBottom="15dp"
             android:ems="10"
             android:inputType="text"
             android:lines="1"
@@ -48,7 +42,6 @@
             android:textColorHint="@color/text"
             android:background="@drawable/input_box"
             />
-
 
         <TextView
             android:layout_width="wrap_content"
@@ -60,6 +53,7 @@
             android:id="@+id/registerEmail"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
+            android:layout_marginBottom="15dp"
             android:ems="10"
             android:inputType="textWebEmailAddress"
             android:lines="1"
@@ -77,6 +71,7 @@
             android:id="@+id/registerPassword"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
+            android:layout_marginBottom="15dp"
             android:ems="10"
             android:inputType="textPassword"
             android:lines="1"
@@ -95,6 +90,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:text="Confirmation Code:"
             android:textColor="@color/text"/>
 
@@ -102,6 +98,7 @@
             android:id="@+id/confirmationCode"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
+            android:layout_marginBottom="15dp"
             android:textColor="@color/text"
             android:textColorHint="@color/text"
             android:background="@drawable/input_box"/>

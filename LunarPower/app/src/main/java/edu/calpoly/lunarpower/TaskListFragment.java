@@ -16,9 +16,9 @@ import java.util.Date;
 
 public class TaskListFragment extends Fragment {
 
-    final private Date date;
+    private Date date;
 
-    public TaskListFragment(Date date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -27,7 +27,7 @@ public class TaskListFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tasks, container, false);
         TextView day =  view.findViewById(R.id.day);
-        day.setText(new SimpleDateFormat("EEEE, MMMM d").format(date));
+        day.setText(new SimpleDateFormat("EEEE, MMMM d").format(date != null ? date : new Date()));
         Button addTask = view.findViewById(R.id.add_device_task);
         addTask.setOnClickListener(new View.OnClickListener() {
             @Override

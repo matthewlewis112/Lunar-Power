@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/day"
-        android:layout_above="@+id/add_device">
+        android:layout_above="@+id/add_device_task">
 
         <LinearLayout
             android:id="@+id/dev"
