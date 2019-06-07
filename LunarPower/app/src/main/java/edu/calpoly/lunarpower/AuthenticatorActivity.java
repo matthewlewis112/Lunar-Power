@@ -4,10 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.amazonaws.mobile.auth.ui.SignInUI;
+
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.client.Callback;
-import com.amazonaws.mobile.client.UserState;
 import com.amazonaws.mobile.client.UserStateDetails;
 
 public class AuthenticatorActivity extends Activity {
@@ -18,26 +17,25 @@ public class AuthenticatorActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        // Add a call to initialize AWSMobileClient
-        AWSMobileClient.getInstance().initialize(this, new Callback<UserStateDetails>() {
+        AWSMobileClient.getInstance().initialize(getApplicationContext(), new Callback<UserStateDetails>() {
             @Override
             public void onResult(UserStateDetails result) {
-                if(result.getUserState() == UserState.SIGNED_IN) {
-                    Log.d(errorTag, "User Signed In");
-                }
-                else {
-                    SignInUI signIn = (SignInUI) AWSMobileClient.getInstance().getClient(AuthenticatorActivity.this, SignInUI.class);
-                    signIn.login(AuthenticatorActivity.this, HomeActivity.class).execute();
-                    Log.d(errorTag, "User is Signed Out");
+                switch (result.getUserState()) {
+                    case SIGNED_IN:
+                        Log.d(errorTag, "User Signed In");
+                        break;
+                    case SIGNED_OUT:
+                        Log.d(errorTag, "User Signed Out");
+                        break;
+                    default:
+                        AWSMobileClient.getInstance().signOut();
                 }
             }
 
             @Override
             public void onError(Exception e) {
-                Log.d(errorTag, "Error signing in " + e.getMessage());
+                Log.d(errorTag, "Error: " + e.getMessage());
             }
         });
-        SignInUI signIn = (SignInUI) AWSMobileClient.getInstance().getClient(AuthenticatorActivity.this, SignInUI.class);
-        signIn.login(AuthenticatorActivity.this, HomeActivity.class).execute();
     }
 }
