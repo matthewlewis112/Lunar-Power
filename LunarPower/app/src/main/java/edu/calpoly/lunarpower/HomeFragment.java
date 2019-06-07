@@ -35,7 +35,9 @@ public class HomeFragment extends Fragment {
         getTasks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((HomeActivity)getActivity()).openFragment(new TaskListFragment(date));
+                TaskListFragment fragment = new TaskListFragment();
+                fragment.setDate(date);
+                ((HomeActivity)getActivity()).openFragment(fragment);
             }
         });
         return inflate;
