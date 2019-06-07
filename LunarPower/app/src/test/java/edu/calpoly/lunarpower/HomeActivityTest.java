@@ -15,4 +15,9 @@ public class HomeActivityTest {
     public void testParentClass() {
         assertEquals(new HomeActivity().getClass(), HomeActivity.class);
     }
+
+    @Test
+    public void testToString(){
+        assertEquals("HomeActivity", new HomeActivity().toString());
+    }
 }
