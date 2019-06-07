@@ -5,14 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/gradient"
     tools:context="edu.calpoly.lunarpower.LoginActivity">
 
     <TextView
+        android:id="@+id/taskCalendar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="25dp"
-        android:text="This is the Login Screen" />
+        android:layout_marginTop="48dp"
+        android:text="Login"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:textSize="23sp" />
 
     <TableLayout
         android:layout_width="match_parent"
@@ -23,14 +28,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_span="3"
-            android:text="Register Section" />
+            android:text="Register Section"
+            android:textColor="@color/text"/>
 
         <TableRow>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Username:" />
+                android:text="Username:"
+                android:textColor="@color/text"/>
 
             <EditText
                 android:id="@+id/registerUsername"
@@ -38,7 +45,10 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
-                android:lines="1" />
+                android:lines="1"
+                android:textColor="@color/text"
+                android:textColorHint="@color/text"
+                android:backgroundTint="@color/text"/>
 
         </TableRow>
 
@@ -47,14 +57,18 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="E-mail:" />
+                android:text="E-mail:"
+                android:textColor="@color/text"/>
 
             <EditText
                 android:id="@+id/registerEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textWebEmailAddress"
-                android:lines="1" />
+                android:lines="1"
+                android:textColor="@color/text"
+                android:textColorHint="@color/text"
+                android:backgroundTint="@color/text"/>
 
         </TableRow>
 
@@ -63,14 +77,18 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Password:" />
+                android:text="Password:"
+                android:textColor="@color/text"/>
 
             <EditText
                 android:id="@+id/registerPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:lines="1" />
+                android:lines="1"
+                android:textColor="@color/text"
+                android:textColorHint="@color/text"
+                android:backgroundTint="@color/text"/>
 
         </TableRow>
 
@@ -78,6 +96,7 @@
             android:id="@+id/registerButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/register_button"
             android:text="Register" />
 
         <TableRow>
@@ -86,12 +105,16 @@
                 android:id="@+id/confirmButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/confirm_button"
                 android:text="confirm" />
 
             <EditText
                 android:id="@+id/confirmationCode"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="@color/text"
+                android:textColorHint="@color/text"
+                android:backgroundTint="@color/text"/>
 
         </TableRow>
 
@@ -106,7 +129,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_span="3"
-            android:text="Login Section" />
+            android:text="Login Section"
+            android:textColor="@color/text"/>
 
 
         <TableRow>
@@ -114,7 +138,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Username/E-mail:" />
+                android:text="Username/E-mail:"
+                android:textColor="@color/text"/>
 
             <EditText
                 android:id="@+id/loginUserOrEmail"
@@ -122,7 +147,10 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
-                android:lines="1" />
+                android:lines="1"
+                android:textColor="@color/text"
+                android:textColorHint="@color/text"
+                android:backgroundTint="@color/text"/>
 
         </TableRow>
 
@@ -131,14 +159,18 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Password:" />
+                android:text="Password:"
+                android:textColor="@color/text"/>
 
             <EditText
                 android:id="@+id/loginPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:lines="1" />
+                android:lines="1"
+                android:textColor="@color/text"
+                android:textColorHint="@color/text"
+                android:backgroundTint="@color/text"/>
 
         </TableRow>
 
@@ -146,6 +178,7 @@
             android:id="@+id/loginButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/login_button"
             android:text="Login" />
 
     </TableLayout>
@@ -206,7 +239,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/btn_corners"
+        android:background="@drawable/home_btn_default"
         android:text="Login"
         android:textColor="@color/text"
         app:layout_constraintBottom_toBottomOf="parent"
