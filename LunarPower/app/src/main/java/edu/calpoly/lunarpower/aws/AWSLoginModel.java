@@ -54,6 +54,8 @@ public class AWSLoginModel {
 
     private final AuthenticationHandler authenticationHandler = new AuthenticationHandler() {
         private final SharedPreferences.Editor editor = mContext.getSharedPreferences(SHARED_PREFERENCE, Context.MODE_PRIVATE).edit();
+        private String putString = userName;
+        private String preference = PREFERENCE_USER_NAME;
         @Override
         public void onSuccess(CognitoUserSession userSession, CognitoDevice newDevice) {
             // Get details of the logged user (in this case, only the e-mail)
@@ -61,8 +63,9 @@ public class AWSLoginModel {
                 @Override
                 public void onSuccess(CognitoUserDetails cognitoUserDetails) {
                     // Save in SharedPreferences
-                    String email = cognitoUserDetails.getAttributes().getAttributes().get(ATTR_EMAIL);
-                    editor.putString(PREFERENCE_USER_EMAIL, email);
+                    putString = cognitoUserDetails.getAttributes().getAttributes().get(ATTR_EMAIL);
+                    preference = PREFERENCE_USER_EMAIL;
+                    editor.putString(preference, putString);
                     editor.apply();
                 }
 
