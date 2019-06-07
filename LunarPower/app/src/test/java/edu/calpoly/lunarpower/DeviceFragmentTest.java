@@ -13,6 +13,11 @@ public class DeviceFragmentTest {
         assertEquals(new DeviceFragment().getClass(), DeviceFragment.class);
     }
 
+    @Test
+    public void testToString(){
+        assertEquals("DeviceFragment", new DeviceFragment().toString());
+    }
+
 
 
 }

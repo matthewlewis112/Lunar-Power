@@ -12,4 +12,9 @@ public class HomeFragmentTest {
     public void testParentClass() {
         assertEquals(new HomeFragment().getClass(), HomeFragment.class);
     }
+
+    @Test
+    public void testToString(){
+        assertEquals("HomeFragment", new HomeFragment().toString());
+    }
 }
