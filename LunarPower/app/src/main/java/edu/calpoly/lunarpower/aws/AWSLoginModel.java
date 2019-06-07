@@ -4,8 +4,11 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
+import com.amazonaws.mobile.auth.core.IdentityManager;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoDevice;
+import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserDetails;
+import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserPool;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserSession;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.AuthenticationContinuation;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.AuthenticationDetails;
@@ -13,6 +16,10 @@ import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.Chal
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.MultiFactorAuthenticationContinuation;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.AuthenticationHandler;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.GetDetailsHandler;
+import com.amazonaws.regions.Regions;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * This represents a model for login operations on AWS Mobile Hub. It manages login operations
@@ -25,7 +32,15 @@ import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.GetDetail
  *
  */
 @SuppressWarnings("unused")
-public class AWSLoginModel extends BaseAWSModel{
+public class AWSLoginModel {
+    // constants
+    private static final String ATTR_EMAIL = "email";
+    private static final String SHARED_PREFERENCE = "SavedValues";
+    private static final String PREFERENCE_USER_NAME = "awsUserName";
+    private static final String PREFERENCE_USER_EMAIL = "awsUserEmail";
+    public static final int PROCESS_SIGN_IN = 1;
+    public static final int PROCESS_REGISTER = 2;
+    public static final int PROCESS_CONFIRM_REGISTRATION = 3;
 
     // interface handler
     private AWSLoginHandler mCallback;
@@ -33,9 +48,11 @@ public class AWSLoginModel extends BaseAWSModel{
     // control variables
     private String userName;
     private String userPassword;
+    private Context mContext;
+    private CognitoUserPool mCognitoUserPool;
+    private CognitoUser mCognitoUser;
 
     private final AuthenticationHandler authenticationHandler = new AuthenticationHandler() {
-        private String putString = userName;
         private String preference = PREFERENCE_USER_NAME;
         @Override
         public void onSuccess(CognitoUserSession userSession, CognitoDevice newDevice) {
@@ -97,7 +114,19 @@ public class AWSLoginModel extends BaseAWSModel{
      *
      */
     public AWSLoginModel(Context context, AWSLoginHandler callback) {
-        init(context);
+        mContext = context;
+        IdentityManager identityManager = IdentityManager.getDefaultIdentityManager();
+        try{
+            JSONObject myJSON = identityManager.getConfiguration().optJsonObject("CognitoUserPool");
+            final String COGNITO_POOL_ID = myJSON.getString("PoolId");
+            final String COGNITO_CLIENT_ID = myJSON.getString("AppClientId");
+            final String COGNITO_CLIENT_SECRET = myJSON.getString("AppClientSecret");
+            final String REGION = myJSON.getString("Region");
+            mCognitoUserPool = new CognitoUserPool(context, COGNITO_POOL_ID, COGNITO_CLIENT_ID, COGNITO_CLIENT_SECRET, Regions.fromName(REGION));
+        } catch (JSONException e) {
+            Log.e("LunarPower","",e);
+        }
+
         mCallback = callback;
     }
 

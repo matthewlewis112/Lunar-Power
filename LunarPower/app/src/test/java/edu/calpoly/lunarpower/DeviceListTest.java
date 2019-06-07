@@ -6,8 +6,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import edu.calpoly.lunarpower.model.DeviceListDO;
+import edu.calpoly.lunarpower.model.DevicesDO;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class DeviceListTest {
     @Test

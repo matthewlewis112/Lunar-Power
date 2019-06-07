@@ -1,14 +1,14 @@
 package edu.calpoly.lunarpower;
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import edu.calpoly.lunarpower.aws.AWSSignUpHandler;
 import edu.calpoly.lunarpower.aws.AWSSignUpModel;
+import edu.calpoly.lunarpower.aws.AWSSignUpHandler;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener, AWSSignUpHandler {
 
