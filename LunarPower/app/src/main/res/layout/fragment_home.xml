@@ -32,7 +32,8 @@
         </CalendarView>
     </LinearLayout>
 
-    /*<Button
+    <Button
+        android:id="@+id/get_tasks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Get Tasks"

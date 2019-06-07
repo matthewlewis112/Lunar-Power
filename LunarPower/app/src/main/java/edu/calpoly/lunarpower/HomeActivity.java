@@ -65,11 +65,7 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    private void openFragment(Fragment fragment) {
-        String frag = getIntent().getStringExtra("frag");
-        if(frag.equals("HomeFragment")) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.nav_home, new HomeFragment()).commit();
-        }
+    public void openFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.container, fragment);
         transaction.addToBackStack(null);
