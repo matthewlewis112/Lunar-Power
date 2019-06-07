@@ -22,6 +22,7 @@ public class SettingsFragment extends Fragment {
             public void onClick(View view) {
                 Log.d("Settings","Logging Out");
                 IdentityManager.getDefaultIdentityManager().signOut();
+                getActivity().finishAndRemoveTask();
             }
         });
         return rootView;
