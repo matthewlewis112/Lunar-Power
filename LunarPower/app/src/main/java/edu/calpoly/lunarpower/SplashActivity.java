@@ -19,7 +19,8 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         AWSMobileClient.getInstance().initialize(SplashActivity.this, new Callback<UserStateDetails>() {
-            final private String logTag = "Splash Activity";
+            private static final String logTag = "Splash Activity";
+
             @Override
             public void onResult(UserStateDetails result) {
                 if (result.getUserState() == SIGNED_IN) {
