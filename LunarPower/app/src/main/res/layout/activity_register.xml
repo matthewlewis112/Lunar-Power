@@ -22,7 +22,7 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="25dp">
+        android:layout_margin="30dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -90,8 +90,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="Confirmation Code:"
+            android:layout_marginTop="55dp"
+            android:textAlignment="center"
+            android:text="Check your email for a confirmation code:"
             android:textColor="@color/text"/>
 
         <EditText
