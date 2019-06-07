@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.config.AWSConfiguration;
@@ -53,7 +54,17 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        AWSCredentialsProvider credentialsProvider = AWSMobileClient.getInstance().getCredentialsProvider();
+        AWSCredentialsProvider credentialsProvider = new AWSCredentialsProvider() {
+            @Override
+            public AWSCredentials getCredentials() {
+                return AWSMobileClient.getInstance().getCredentials();
+            }
+
+            @Override
+            public void refresh() {
+                //Not needed
+            }
+        };
         AWSConfiguration configuration = AWSMobileClient.getInstance().getConfiguration();
 
         AmazonDynamoDBClient dynamoDBClient = new AmazonDynamoDBClient(credentialsProvider);
