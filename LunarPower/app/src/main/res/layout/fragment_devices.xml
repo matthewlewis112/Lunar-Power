@@ -103,7 +103,7 @@
                 android:layout_marginVertical="20dp"
                 android:onClick="addDevice"
                 android:background="@drawable/login_button"
-                android:text="Add Device" />
+                android:text="Add New Device" />
 
         </LinearLayout>
     </ScrollView>
