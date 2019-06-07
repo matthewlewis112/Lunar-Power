@@ -2,4 +2,11 @@
     <string name="app_name">LunarPower</string>
     <string name="title_activity_autehnticator">AutehnticatorActivity</string>
     <string name="title_activity_authenticator">AuthenticatorActivity</string>
+
+    <string-array name="actions">
+        <item>Turn off light</item>
+        <item>Turn on light</item>
+        <item>Strobe</item>
+        <item>Change color</item>
+    </string-array>
 </resources>

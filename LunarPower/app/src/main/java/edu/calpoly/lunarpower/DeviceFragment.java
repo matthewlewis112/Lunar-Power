@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -20,7 +21,7 @@ public class DeviceFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         LinearLayout view = (LinearLayout)inflater.inflate(R.layout.fragment_devices, container, false);
-        HomeActivity activity = (HomeActivity)getActivity();
+        final HomeActivity activity = (HomeActivity)getActivity();
         List<DevicesDO> devices = activity.getDevices();
         TextView textVal;
 
@@ -31,6 +32,14 @@ public class DeviceFragment extends Fragment {
             view.addView(textVal);
         }
 
-        return inflater.inflate(R.layout.fragment_devices,container,false);
+        Button device = view.findViewById(R.id.lights);
+        device.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.openFragment(new AddTaskFragment());
+            }
+        });
+
+        return view;
     }
 }
