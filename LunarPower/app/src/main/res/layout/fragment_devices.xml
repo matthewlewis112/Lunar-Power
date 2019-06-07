@@ -38,7 +38,7 @@
                 android:text="LivingRoom Lights"
                 android:textColor="@color/text"
                 android:textSize="23sp"
-                android:padding="40dp"/>
+                android:padding="30dp"/>
 
             <TextView
                 android:id="@+id/textView3"
@@ -47,7 +47,7 @@
                 android:text="Mattew's Coffee Maker"
                 android:textColor="@color/text"
                 android:textSize="23sp"
-                android:padding="40dp"/>
+                android:padding="30dp"/>
 
             <TextView
                 android:id="@+id/textView4"
@@ -65,7 +65,7 @@
                 android:text="Washer"
                 android:textColor="@color/text"
                 android:textSize="23sp"
-                android:padding="40dp"/>
+                android:padding="30dp"/>
 
             <TextView
                 android:id="@+id/textView6"
@@ -74,7 +74,7 @@
                 android:text="Dryer"
                 android:textColor="@color/text"
                 android:textSize="23sp"
-                android:padding="40dp"/>
+                android:padding="30dp"/>
 
             <TextView
                 android:id="@+id/textView7"
@@ -83,11 +83,12 @@
                 android:text="Bedroom Lights"
                 android:textColor="@color/text"
                 android:textSize="23sp"
-                android:padding="40dp"/>
+                android:padding="30dp"/>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:layout_marginVertical="20dp"
                 android:onClick="addDevice"
                 android:background="@drawable/login_button"
                 android:text="Add Device" />

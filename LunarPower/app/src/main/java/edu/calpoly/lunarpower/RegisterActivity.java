@@ -12,7 +12,7 @@ import edu.calpoly.lunarpower.aws.AWSSignUpHandler;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener, AWSSignUpHandler {
 
-    AWSSignUpModel awsSignUpModel;
+    AWSSignUpModel awsSignUpModel = new AWSSignUpModel(this, this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_register);
 
         // instantiating AWSSignUpModel(context, callback)
-        awsSignUpModel = new AWSSignUpModel(this, this);
         findViewById(R.id.registerButton).setOnClickListener(this);
         findViewById(R.id.confirmButton).setOnClickListener(this);
     }

@@ -53,7 +53,6 @@ public class AWSLoginModel {
     private CognitoUser mCognitoUser;
 
     private final AuthenticationHandler authenticationHandler = new AuthenticationHandler() {
-        private final SharedPreferences.Editor editor = mContext.getSharedPreferences(SHARED_PREFERENCE, Context.MODE_PRIVATE).edit();
         private String putString = userName;
         private String preference = PREFERENCE_USER_NAME;
         @Override
@@ -63,9 +62,10 @@ public class AWSLoginModel {
                 @Override
                 public void onSuccess(CognitoUserDetails cognitoUserDetails) {
                     // Save in SharedPreferences
-                    putString = cognitoUserDetails.getAttributes().getAttributes().get(ATTR_EMAIL);
+                    SharedPreferences.Editor editor = mContext.getSharedPreferences(SHARED_PREFERENCE, Context.MODE_PRIVATE).edit();
+                    String email = cognitoUserDetails.getAttributes().getAttributes().get(ATTR_EMAIL);
                     preference = PREFERENCE_USER_EMAIL;
-                    editor.putString(preference, putString);
+                    editor.putString(preference, email);
                     editor.apply();
                 }
 
@@ -76,6 +76,7 @@ public class AWSLoginModel {
             });
 
             // Save in SharedPreferences
+            SharedPreferences.Editor editor = mContext.getSharedPreferences(SHARED_PREFERENCE, Context.MODE_PRIVATE).edit();
             editor.putString(PREFERENCE_USER_NAME, userName);
             editor.apply();
             mCallback.onSignInSuccess();
