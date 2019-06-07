@@ -42,4 +42,9 @@ public class HomeFragment extends Fragment {
         });
         return inflate;
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
+    }
 }

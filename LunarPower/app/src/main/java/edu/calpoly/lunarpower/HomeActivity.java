@@ -101,4 +101,9 @@ public class HomeActivity extends AppCompatActivity {
         dynamoDBMapper.save(device);
         openFragment(new DeviceFragment());
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
+    }
 }

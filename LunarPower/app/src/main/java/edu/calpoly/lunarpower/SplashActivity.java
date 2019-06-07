@@ -41,4 +41,9 @@ public class SplashActivity extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
+    }
 }

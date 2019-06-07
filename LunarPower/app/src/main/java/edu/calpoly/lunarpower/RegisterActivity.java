@@ -86,4 +86,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         // do confirmation and handles on interface
         awsSignUpModel.confirmRegistration(confirmationCode.getText().toString());
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
+    }
 }

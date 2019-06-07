@@ -42,4 +42,9 @@ public class DeviceFragment extends Fragment {
 
         return view;
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
+    }
 }

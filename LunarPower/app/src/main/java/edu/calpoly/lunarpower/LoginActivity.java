@@ -67,4 +67,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         // go to sign up
         startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
+    }
 }

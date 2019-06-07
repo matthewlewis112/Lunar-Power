@@ -37,4 +37,9 @@ public class AuthenticatorActivity extends Activity {
             }
         });
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
+    }
 }

@@ -33,4 +33,9 @@ public class AddDeviceFragment extends Fragment implements View.OnClickListener 
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
+    }
 }
