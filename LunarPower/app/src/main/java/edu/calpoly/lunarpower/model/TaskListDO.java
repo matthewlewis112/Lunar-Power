@@ -39,4 +39,17 @@ public class TaskListDO {
         this.time = time;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        if(tasks != null) {
+            int index = 0;
+            while (index < tasks.size()) {
+                sb.append(tasks.get(index)).append("\n");
+                index++;
+            }
+        }
+        return sb.toString();
+    }
+
 }

@@ -1,5 +1,7 @@
 package edu.calpoly.lunarpower.model;
 
+import android.support.annotation.StringDef;
+
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBAttribute;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBHashKey;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
@@ -28,6 +30,19 @@ public class DeviceListDO {
 
     public void setDevices(final List<String> devices) {
         this.devices = devices;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        if(devices != null) {
+            int index = 0;
+            while (index < devices.size()) {
+                sb.append(devices.get(index)).append("\n");
+                index++;
+            }
+        }
+        return sb.toString();
     }
 
 }
