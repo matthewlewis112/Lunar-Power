@@ -53,7 +53,6 @@ public class AWSLoginModel {
     private CognitoUser mCognitoUser;
 
     private final AuthenticationHandler authenticationHandler = new AuthenticationHandler() {
-        private String putString = userName;
         private String preference = PREFERENCE_USER_NAME;
         @Override
         public void onSuccess(CognitoUserSession userSession, CognitoDevice newDevice) {
