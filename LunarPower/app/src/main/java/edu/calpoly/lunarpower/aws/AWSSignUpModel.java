@@ -49,9 +49,61 @@ public class AWSSignUpModel {
     private AWSSignUpHandler mCallback;
 
     // control variables
+    private String userName;
+    private String userPassword;
     private Context mContext;
     private CognitoUserPool mCognitoUserPool;
     private CognitoUser mCognitoUser;
+
+    private final AuthenticationHandler authenticationHandler = new AuthenticationHandler() {
+        @Override
+        public void onSuccess(CognitoUserSession userSession, CognitoDevice newDevice) {
+            // Get details of the logged user (in this case, only the e-mail)
+            mCognitoUser.getDetailsInBackground(new GetDetailsHandler() {
+                @Override
+                public void onSuccess(CognitoUserDetails cognitoUserDetails) {
+                    // Save in SharedPreferences
+                    SharedPreferences.Editor editor = mContext.getSharedPreferences(SHARED_PREFERENCE, Context.MODE_PRIVATE).edit();
+                    String email = cognitoUserDetails.getAttributes().getAttributes().get(ATTR_EMAIL);
+                    editor.putString(PREFERENCE_USER_EMAIL, email);
+                    editor.apply();
+                }
+
+                @Override
+                public void onFailure(Exception exception) {
+                    Log.e("LunarPower","",exception);
+                }
+            });
+
+            // Save in SharedPreferences
+            SharedPreferences.Editor editor = mContext.getSharedPreferences(SHARED_PREFERENCE, Context.MODE_PRIVATE).edit();
+            editor.putString(PREFERENCE_USER_NAME, userName);
+            editor.apply();
+        }
+
+        @Override
+        public void getAuthenticationDetails(AuthenticationContinuation authenticationContinuation, String userId) {
+            final AuthenticationDetails authenticationDetails = new AuthenticationDetails(userName, userPassword, null);
+            authenticationContinuation.setAuthenticationDetails(authenticationDetails);
+            authenticationContinuation.continueTask();
+            userPassword = "";
+        }
+
+        @Override
+        public void getMFACode(MultiFactorAuthenticationContinuation continuation) {
+            // Not implemented for this Model
+        }
+
+        @Override
+        public void authenticationChallenge(ChallengeContinuation continuation) {
+            // Not implemented for this Model
+        }
+
+        @Override
+        public void onFailure(Exception exception) {
+            mCallback.onFailure(PROCESS_SIGN_IN, exception);
+        }
+    };
 
 
     /**

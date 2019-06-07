@@ -12,12 +12,14 @@ import edu.calpoly.lunarpower.aws.AWSSignUpHandler;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener, AWSSignUpHandler {
 
-    AWSSignUpModel awsSignUpModel = new AWSSignUpModel(this, this);
+    AWSSignUpModel awsSignUpModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        awsSignUpModel =  new AWSSignUpModel(this, this);
 
         // instantiating AWSSignUpModel(context, callback)
         findViewById(R.id.registerButton).setOnClickListener(this);
