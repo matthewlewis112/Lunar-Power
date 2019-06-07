@@ -39,12 +39,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onFailure(int process, Exception exception) {
         Log.d("Login Activity", exception.getMessage());
         String whatProcess = "";
-        switch (process) {
-            case AWSLoginModel.PROCESS_SIGN_IN:
+        if (process == AWSLoginModel.PROCESS_SIGN_IN) {
                 whatProcess = "Sign In:";
-                break;
-            default:
-                break;
         }
         Toast.makeText(LoginActivity.this, whatProcess + exception.getMessage(), Toast.LENGTH_LONG).show();
     }
