@@ -9,11 +9,12 @@
     tools:context="edu.calpoly.lunarpower.LoginActivity">
 
     <TextView
-        android:id="@+id/taskCalendar"
+        android:id="@+id/Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="55dp"
+        android:layout_marginBottom="35dp"
         android:text="Login"
         android:textAlignment="center"
         android:textColor="@color/text"
@@ -22,7 +23,7 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="25dp">
+        android:layout_margin="30dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,7 +41,7 @@
             android:lines="1"
             android:textColor="@color/text"
             android:textColorHint="@color/text"
-            android:backgroundTint="@color/text"
+            android:background="@drawable/input_box"
             />
 
         <TextView
@@ -58,14 +59,23 @@
             android:lines="1"
             android:textColor="@color/text"
             android:textColorHint="@color/text"
-            android:backgroundTint="@color/text"/>
+            android:background="@drawable/input_box"/>
 
         <Button
             android:id="@+id/loginButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:background="@drawable/login_button"
             android:text="Login" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="85dp"
+            android:textAlignment="center"
+            android:text="Don't have an account? Sign up now!"
+            android:textColor="@color/text"/>
 
         <Button
             android:id="@+id/signUpButton"
