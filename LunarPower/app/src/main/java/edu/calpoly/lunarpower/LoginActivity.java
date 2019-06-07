@@ -51,15 +51,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.loginButton:
-                loginAction();
-                break;
-            case R.id.signUpButton:
-                signUpAction();
-                break;
-            default:
-                break;
+        if( view.getId() == R.id.loginButton){
+            loginAction();
+        }
+        else if( view.getId() ==  R.id.signUpButton) {
+            signUpAction();
         }
     }
 
